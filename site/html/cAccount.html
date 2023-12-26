@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='/site/css/cAccount.css'>
+    <script src='/site/js/cAccount.js'></script>
+</head>
+<body>  <!-- 홈페이지는 거의 99.9% 헤더 본문 푸터 패턴 -->
+    <div id="wrap"> <!-- 전체 레이아웃 -->
+        <div id="header"> <!-- 헤더 -->
+            <div id="hLogo">
+                <a href="">
+                    <img style="height: 130px;" src="/img/20654215_user_114344.jpg">
+                </a>
+            </div>
+        </div>
+        <div id="main"> <!-- 본문 -->
+            <form> <!-- 백엔드가 없어서 가입하기 눌러도 안되는 게 맞음 -->
+                <h5>아이디</h5>
+                <div class="inputBox" > <!-- 여러개 만들거라서 class로-->
+                    <input id="ezenId" maxlength="25"/>
+                </div>
+
+                <h5>비밀번호</h5>
+                <div class="inputBox" > <!-- 여러개 만들거라서 class로-->
+                    <input id="ezenPw" type="password" maxlength="25"/>
+                    <span class="inputIcon" id="pwIcon"></span>
+                </div>
+
+                <h5>비밀번호확인</h5>
+                <div class="inputBox" > <!-- 여러개 만들거라서 class로-->
+                    <input id="ezenPwcheck" type="password" maxlength="25"/>
+                </div>
+
+                <h5>이름</h5>
+                <div class="inputBox" > <!-- 여러개 만들거라서 class로-->
+                    <input maxlength="25"/>
+                </div>
+
+                <h5>생년월일</h5>
+                <div id="birthBox">
+                    <div class="inputBox birthY" > <!-- 여러개 만들거라서 class로-->
+                        <input type="text" maxlength="4" placeholder="년(4자리)"/>
+                    </div>
+                    <div class="inputBox birthM" >
+                        <select>
+                            <option>월</option>
+                            <option>1월</option>
+                            <option>2월</option>
+                            <option>3월</option>
+                            <option>4월</option>
+                            <option>5월</option>
+                            <option>6월</option>
+                            <option>7월</option>
+                            <option>8월</option>
+                            <option>9월</option>
+                            <option>10월</option>
+                            <option>11월</option>
+                            <option>12월</option>
+                        </select>
+                    </div>
+                    <div class="inputBox birthD" > <!-- 여러개 만들거라서 class로-->
+                        <input type="text" maxlength="2" placeholder="일"/>
+                    </div>
+                </div>
+
+                <h5>성별</h5>
+                <div class="inputBox">
+                    <select>
+                        <option>성별</option>
+                        <option>남자</option>
+                        <option>여자</option>
+                    </select>
+                </div>
+
+                <h5>기수</h5>
+                <div class="inputBox">
+                    <select>
+                        <option>1기</option>
+                        <option>2기</option>
+                        <option>3기</option>
+                    </select>
+                </div>
+
+            </form>
+        </div>
+
+
+        <input onclick="_signup2()" id="signupBtn" type="submit" value="가입하기"/>
+
+
+        <div id="footer"> <!-- 푸터 -->
+            <div id="footerbox">
+                <div id="ftTop" >
+                    <a href="#">이용약관</a>
+                    <a href="#">개인정보처리방침</a>
+                    <a href="#">책임의 한계와 법적고지</a>
+                    <a href="#">회원정보 고객센터</a>
+                </div>
+                <div id="ftBtm">
+                    <span> Copyright EZEN Corp. All Rights Reserved</span>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</body>
+</html>

@@ -1,0 +1,77 @@
+* { list-style: none;   /* 공통 css */
+    margin: 0px;
+    padding: 0px;
+    line-height: 180%;
+    text-decoration: none
+
+}
+
+#allWrap{   /* 전체 묶어주기 */
+    width: 1200px;
+    margin: 0 auto;
+}
+
+#headerTop{ /* 헤더 */
+    display: flex;
+justify-content: space-between;
+}
+
+#headerBtm{
+    text-align: center;
+    border-bottom: 3px solid #74bbbe;
+}
+
+#mainInner{ /* 메인 배열 */
+    display: flex;
+    margin-top: 30px;
+    justify-content: space-between;
+}
+
+    .topLine{
+        border-top: 3px solid #74bbbe;
+        padding: 15px;
+    }
+
+
+    #mainInnerL{/* 메인 L */
+        width: 250px;
+        text-align: left;
+    }
+
+        #myInfo{    /* 내 정보 */
+            font-weight: bold;
+        }
+
+        #cafeWrite{     /* 카페 글 쓰기 버튼 */
+            margin-top: 10px;
+            text-align: center;
+            border: 1px solid gray;
+            border-radius: 10px;
+            background-color: gray;
+            padding: 5px 0px;
+            color: white;
+        }
+        
+        #cafeWrite:hover{
+            text-decoration: underline;
+            cursor: pointer;
+        }
+
+
+    #mainMenu{
+        min-height: 700px;
+    }
+
+
+    #mainInnerR{    /*참고 !! 메인 이너 size !! 참고*/
+        width: 920px;
+    }
+
+    
+
+
+    #footer{ 
+        display: flex;
+        justify-content: space-between;
+        padding-bottom: 30px;
+    }

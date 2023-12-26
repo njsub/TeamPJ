@@ -1,0 +1,110 @@
+* { list-style: none;   /* 공통 css */
+    margin: 0px;
+    padding: 0px;
+    line-height: 160%;
+    text-decoration: none;
+    box-sizing: border-box;
+
+}
+
+
+ol,li,ul {list-style: none;}
+a {text-decoration: none; color: #000;}
+
+body{
+    background-color: #F5F6F7;
+}
+
+#wrap{width: 400px; margin: 0 auto;}
+/* =============헤더=============== */
+#header{ width: 400px; margin: 0 auto}
+
+    #hLogo {text-align: center; margin: 50px 0px; 
+        /* 배경색(background color)은 패딩은 포함하되 마진은 취급 안함
+        >>>> wrap에서 body로 background color 바꿈 */}
+    #hLogo img{height: 50px;}
+
+.inputBox{
+    background-color: white;
+    border: 1px solid #dedede;
+    padding : 10px;
+    display: flex;
+    align-items: center; /* ★★★★ */
+
+}
+.inputBox input, select{
+    border: none; /* 테두리 제거 */
+    background-color: white;
+    height: 30px; width: 100%; /* ★★★★ flex의 자식요소 사이즈는 자동으로 바뀜(기본 값이 nowrap)*/
+}
+.inputBox span{
+    background-color: white;
+    color: #aeaeae
+}
+
+/* *:focus : 커서가 깜박거림 상태.. */
+*:focus{outline: none;}
+
+/* ========================================= */
+h5{ margin: 20px 0px 5px 0px;}
+
+.inputIcon{ /* 후 처리 편하게 나중에 묶어줌 */
+    width: 25px; height: 25px;
+    background-image: url(https://static.nid.naver.com/images/ui/join/m_icon_pw_step.png);
+    background-size: 120px 75px; 
+    
+}
+
+    #pwIcon{  
+        background-position-x: 0px; /* x축 위치 */
+        background-position-y: 0px; /* y축 위치 */ /* 크롬에서 위치 찾아보기 */
+    }
+
+
+#birthBox{ /* 생년월일 */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+}
+    .birthY, .birthM, .birthD{ width: 120px;}
+
+.phoneBox{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+#signupBtn{
+    background-color: #74bbbe;
+    border: none;
+    color: white;
+    margin: 50px 0px;
+    font-size: 20px; font-weight: bold;
+    width: 100%; height: 50px;  
+}
+    #signupBtn:hover{
+        text-decoration: underline;
+    }
+    
+
+#ftTop, #ftBtm{
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+#ftTop > a ,#ftBtm{
+    font-size: 8px;
+    color: #aeaeae;
+    text-align: center;
+    
+}
+
+#ftTop a:hover{
+    text-decoration: underline;
+}
+
+
+#ftBtm > img {width: 100px;}
+#ftBtm > span{ text-align: center; font-size: 6px;}
