@@ -60,13 +60,6 @@ h5{ margin: 20px 0px 5px 0px;}
         background-position-y: 0px; /* y축 위치 */ /* 크롬에서 위치 찾아보기 */
     }
 
-.phoneBox{
-    display: flex;
-    justify-content: space-between;
-    margin-top: 10px;
-    margin-bottom: 10px;
-}
-
 #signupBtn{
     background-color: #74bbbe;
     border: none;
