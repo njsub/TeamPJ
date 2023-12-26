@@ -60,15 +60,6 @@ h5{ margin: 20px 0px 5px 0px;}
         background-position-y: 0px; /* y축 위치 */ /* 크롬에서 위치 찾아보기 */
     }
 
-
-#birthBox{ /* 생년월일 */
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-
-}
-    .birthY, .birthM, .birthD{ width: 120px;}
-
 .phoneBox{
     display: flex;
     justify-content: space-between;
