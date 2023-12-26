@@ -16,6 +16,9 @@
 justify-content: space-between;
 }
 
+#headerTR>input{ padding: 5px;}
+
+
 #headerBtm{
     text-align: center;
     border-bottom: 3px solid #74bbbe;

@@ -18,7 +18,7 @@
             </div>
         </div>
         <div id="main"> <!-- 본문 -->
-            <form> <!-- 백엔드가 없어서 가입하기 눌러도 안되는 게 맞음 -->
+            <form>
                 <h5>아이디</h5>
                 <div class="inputBox" > <!-- 여러개 만들거라서 class로-->
                     <input id="ezenId" maxlength="25"/>
@@ -37,15 +37,14 @@
 
                 <h5>이름</h5>
                 <div class="inputBox" > <!-- 여러개 만들거라서 class로-->
-                    <input maxlength="25"/>
+                    <input id="ezenName" maxlength="25"/>
                 </div>
 
-                <h5>성별</h5>
+                <h5>신분</h5>
                 <div class="inputBox">
-                    <select>
-                        <option>성별</option>
-                        <option>남자</option>
-                        <option>여자</option>
+                    <select id="ezenGrade">
+                        <option>학생</option>
+                        <option>강사</option>
                     </select>
                 </div>
 

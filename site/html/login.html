@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='/site/css/login.css'>
+    <script src='/site/js/login.js'></script>
+</head>
+<body>
+    <div id="wrap">
+        <div id="header"> <!-- 헤더 -->
+            <div id="hLogo">
+                <a href="">
+                    <img style="height: 130px;" src="/img/20654215_user_114344.jpg">
+                </a>
+            </div>
+        </div>
+            <h5>아이디</h5>
+            <div class="inputBox" >
+                <input id="loginId" maxlength="25"/>
+            </div>
+
+            <h5>비밀번호</h5>
+            <div class="inputBox" >
+                <input id="loginPw" type="password" maxlength="25"/>
+                <span class="inputIcon" id="pwIcon"></span>
+            </div>
+            <input onclick="login()" id="loginBtn" type="submit" value="로그인"/>
+        
+    </div>
+</body>
+</html>

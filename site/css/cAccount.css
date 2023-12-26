@@ -70,6 +70,7 @@ h5{ margin: 20px 0px 5px 0px;}
 }
     #signupBtn:hover{
         text-decoration: underline;
+        cursor: pointer;
     }
     
 
