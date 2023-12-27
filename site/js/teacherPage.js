@@ -5,7 +5,7 @@
 
 
 */
-    
+document.addEventListener('DOMContentLoaded' , function(){
 let studentArray = []; 
 
 // 회원 저장 객체배열 불러오기
@@ -14,7 +14,7 @@ console.log(identifyArray)
 console.log(studentArray)
 
 
-
+회원출력()
 function 기수체크(){
        // 회원배열에 기수 체크
        let initialValue = 0         // 기본 기수 값
@@ -44,9 +44,9 @@ function 회원출력(){
                 <li>${identifyArray[i].generation}기수</li>
                 <div>
                     <select>
-                        <option>0기수</option>
-                        <option>1기수</option>
-                        <option>2기수</option>
+                        <option name="기수" value="초기기수"/>0기수</option>
+                        <option name="기수" value="1기수"/>1기수</option>
+                        <option name="기수" value="2기수"/>2기수</option>
                     </select>
                 </div>
                 </ul>`
@@ -62,29 +62,35 @@ function 회원출력(){
 
 
 
+
 const selects = document.querySelectorAll('select')
 // querySelectorAll 로 받으면 배열로 받아서 for문으로 돌려야함.
-for(let i = 0; i < selects.length; i++){
-    console.log(selects.length)
+for(let i = 0 ; i < selects.length; i++){
     selects[i].addEventListener('change' , function(event){
-    for(let j = 0 ; j < identifyArray.length; j++){
-        console.log(studentArray[i])
-        if(studentArray[i] == identifyArray[j].ezenMNo){
-            identifyArray[j].generation = selects[i].selectedIndex
-            localStorage.setItem('identifyArray', JSON.stringify(identifyArray));
-            // localStorage 배열객체 재저장
-            console.log(selects[i].selectedIndex)
-            회원출력()
+        console.log(selects[i].selectedIndex)
+        let id = studentArray[i]
+        console.log(id)
+        // id 값하고 회원넘버 비교해서 값 넣어줘야함....
+        for(let z = 0 ; z < identifyArray.length; z++){
+            console.log(identifyArray[z].ezenMNo)
+            if(id == identifyArray[z].ezenMNo){
+                identifyArray[z].generation = selects[i].selectedIndex
+                alert(identifyArray[z].generation)
+                localStorage.setItem('identifyArray', JSON.stringify(identifyArray));
+                // 페이지 새로고침...시ㅂ.....ㅠ 밤 11시..10분..ㅠㅠ
+                location.reload()
+            }
+            
         }
-    }
-    
+    })
+
+}
+        
+
+  
+
 
 }) // e end
-
-} // f end
-
-
-회원출력()
 /*
 
 
@@ -101,4 +107,36 @@ for(let i = 0; i < selects.length; i++){
 
 }) // e end
 }
+*/
+
+/*
+
+기수교체(){
+const selects = document.querySelectorAll('select')
+// querySelectorAll 로 받으면 배열로 받아서 for문으로 돌려야함.
+for(let i = 0 ; i < selects.length; i++)
+selects[i].addEventListener('change' , function(event){
+  console.log(selects[i].selectedIndex)
+  let id = studentArray[i]
+  console.log(id)
+  // id 값하고 회원넘버 비교해서 값 넣어줘야함....
+  for(let z = 0 ; z < identifyArray.length; z++){
+    console.log(identifyArray[z].ezenMNo)
+    if(id == identifyArray[z].ezenMNo){
+        identifyArray[z].generation = selects[i].selectedIndex
+        alert(identifyArray[z].generation)
+        localStorage.setItem('identifyArray', JSON.stringify(identifyArray));
+        회원출력()
+    }
+   
+  }
+})
+
+}
+
+
+
+
+
+
 */
