@@ -9,6 +9,30 @@
     <script src='/site/js/category.js'></script>
 </head>
 <body>
-    
+    <div id="categorylistBox">
+        <h3>카테고리목록</h3>
+        <table>
+            <thead>
+                <th>cno</th>
+                <th>카테고리명</th>
+                <th>권한</th>
+                <th>기수</th>
+            </thead>
+            <tbody id="categoryList">
+                <!-- <td>10</td>
+                <td>카테고리명</td>
+                <td>3</td>
+                <td>2</td> -->
+            </tbody>
+        </table>
+    </div>
+    <div id="categoryBox2">
+        <h3>카테고리등록</h3>
+        <span>cno</span><input style="width: 40px;" id="cnoBox" type="text" value="">
+        <span>카테고리명</span><input id="cateBox" type="text" value="">
+        <span>권한</span><input style="width: 40px;" id="ggBox" type="text" value="">
+        <span>기수</span><input style="width: 40px;" id="gisuBox" type="text" value="">
+        <button onclick="카테고리등록()" id="btn">등록</button>
+    </div>
 </body>
 </html>
