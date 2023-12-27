@@ -45,10 +45,11 @@ ul , li , a {text-decoration: none; list-style-type: none; box-sizing: border-bo
     text-align: center;
 }
 
-#teachControl input{
+#teachControl select{
     font-size: 20px;
     font-weight: bold;
     border: 1px solid red;
-    width: 98px;
+    width: 200px;
+    height: 30px;
     text-align: center;
 }
