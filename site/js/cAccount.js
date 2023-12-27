@@ -17,16 +17,27 @@ function _signup2(){
     if(ezenGrade == '강사'){ ezenGrade = 4 ;}
     console.log(ezenGrade)
 
+    let identifyArray = JSON.parse(localStorage.getItem('identifyArray'))
+    if (identifyArray==null){ identifyArray=[]}
+    
     const identify = { ezenId : ezenId ,
         ezenPw : ezenPw,
         ezenName : ezenName,
-        ezenGrade : ezenGrade
+        ezenGrade : ezenGrade,
+        
     }
 
-    let identifyArray = JSON.parse(localStorage.getItem('identifyArray'))
-    if (identifyArray==null){ identifyArray=[]}
-    identifyArray.push(identify)
+    identifyArray.push(identify)        /* 넣어야 할 값 넣기 */
+    // console.log(identifyArray[identifyArray.length-1].ezenMNo) // undefined
+    if( identifyArray.length-1 == 0 ){identifyArray[identifyArray.length-1].ezenMNo = 1}
+    else{ identify.ezenMNo = Number(identifyArray[identifyArray.length-2].ezenMNo)+1 } 
+    console.log(identifyArray[identifyArray.length-1].ezenMNo) //NaN               /*  MNo 고유값 만들기 */
+
+    identifyArray.splice(identifyArray.length-1,1,identify) /* 원래 없던 identify 제거하고 새로 넣기 */
     localStorage.setItem('identifyArray' , JSON.stringify(identifyArray) )
+
+
+
     alert('회원가입 완료.')
     location.href = '/site/main.html' // 말고 로그인 페이지로 가게 하기
 

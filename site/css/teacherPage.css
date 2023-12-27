@@ -1,0 +1,55 @@
+
+/* 
+    // 중앙 컨텐츠 920px
+    // 게시판 부분 높이 700px
+
+*/
+ul , li , a {text-decoration: none; list-style-type: none; box-sizing: border-box;}
+
+#임시랩{
+    width: 800px;
+    margin: 0 auto;
+}
+
+#teachMeinBox{
+    border: 1px solid gray;
+}
+
+#teachMein{
+    display: flex;
+    justify-content: space-evenly;
+}
+#teachMein > li{
+    font-size: 25px;
+    font-weight: bold;
+    border: 1px solid red;
+    width: 200px;
+    text-align: center;
+}
+
+
+#teachControloBox{
+    border: 1px solid blue;
+}
+
+#teachControl{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+#teachControl > li{
+    font-size: 20px;
+    font-weight: bold;
+    border: 1px solid red;
+    width: 200px;
+    text-align: center;
+}
+
+#teachControl select{
+    font-size: 20px;
+    font-weight: bold;
+    border: 1px solid red;
+    width: 200px;
+    height: 30px;
+    text-align: center;
+}
