@@ -1,4 +1,3 @@
-console.log('js')
 
 const 카테고리목록 = []
 
@@ -8,17 +7,17 @@ function 카테고리등록(){
 
     const cnoBox = document.querySelector('#cnoBox').value;
     const cateBox = document.querySelector('#cateBox').value;
-    const ggBox = document.querySelector('#ggBox').value;
+    const gradeBox = document.querySelector('#gradeBox').value;
     const gisuBox = document.querySelector('#gisuBox').value;
 
-    const categoryArray = {cno : cnoBox, 카테고리명 : cateBox, 권한 : ggBox, 기수 : gisuBox}
+    const categoryArray = {cno : cnoBox, 카테고리명 : cateBox, 권한 : gradeBox, 기수 : gisuBox}
     카테고리목록.push(categoryArray); console.log(categoryArray)
 
    
     // 초기화
     document.querySelector('#cnoBox').value ='';
     document.querySelector('#cateBox').value = '';
-    document.querySelector('#ggBox').value = '';
+    document.querySelector('#gradeBox').value = '';
     document.querySelector('#gisuBox').value = '';
 
     // 3. 출력
