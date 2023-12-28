@@ -13,7 +13,7 @@ function login(){
     for(let i =0 ; i<identifyArray.length ; i ++){
         console.log('for문 실행')
         if(identifyArray[i].ezenId == login.loginId && identifyArray[i].ezenPw ==login.loginPw ){
-            alert('로그인 성공');
+           
             localStorage.setItem ( 'ezenLogin' , JSON.stringify(login) ) /* 로그인 하는 객체를 ezenLogin Storage 에 넣기 */
 
             location.href="/site/main.html"

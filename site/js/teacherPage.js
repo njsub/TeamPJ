@@ -20,6 +20,10 @@ function _signup(){
 
 }
 
+function cafeWritePage(){/* 글쓰기 페이지로 가는 함수 */
+    location.href ="cafeWritePage.html";
+} 
+
 
 // 박시현 작업 시작
 
@@ -69,7 +73,7 @@ for(let i = 0 ; i < identifyArray.length; i++){
 
     myInfo.innerHTML =`${ithezenName}님<br/>
     카페 회원 등급 : ${ithezenGrade}<br/>
-    <div onclick="★★()" id="cafeWrite">카페 글 쓰기</div>`
+    <div onclick="cafeWritePage()" id="cafeWrite">카페 글 쓰기</div>`
             //★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★카페 글 쓰기 펑션 및 등급 넣기
     localStorage.setItem( 'ezenLogin' , JSON.stringify(ezenLogin) )
 

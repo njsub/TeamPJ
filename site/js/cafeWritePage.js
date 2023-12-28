@@ -35,4 +35,9 @@ function _logOut(){         /* 로그아웃 */
     로그인 안하면 글쓰기 버튼 자체가 없을거라 로그인 상태만 유지되면 될 거같아요 */
 }
 
+function cafeWritePage(){/* 글쓰기 페이지로 가는 함수 */
+    location.href ="/html/cafeWritePage.html";
+} 
+
+
 //까지가 로그인된 카페 글 쓰기 화면 함수
