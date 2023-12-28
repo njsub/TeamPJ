@@ -25,11 +25,21 @@
             </div>
         </div>
         <div id="mainInner"><!-- 이너 -->
-            
-
-           카페 글쓰기 내용 쓸 공간
-
-
+            <div id="main">
+                <div>
+                    <br/>
+                    <input id="cftitle" type="text" placeholder="제목"><br/>
+                    <!-- <input type="text" placeholder="기수" readonly><br/> -->
+                    <select id="contentSelect">
+                        <option value="선택">선택</option>
+                        <option value="공지">공지</option>
+                        <option value="1기수">1기수 게시판</option>
+                        <option value="2기수">2기수 게시판</option>
+                    </select>
+                    <textarea placeholder="게시물내용입력"></textarea><br/>
+                    <button onclick="게시글등록()" type="button">게시글등록</button><br/>
+                </div>
+            </div>
         </div>
         <div id="footer" class="topLine"><!-- 푸터 -->
             <div id="footerL">
