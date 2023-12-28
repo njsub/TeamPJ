@@ -94,10 +94,21 @@ justify-content: space-between;
 #teachRwap{
     width: 800px;
     margin: 0 auto;
+    margin-top: 40px;
 }
-
+#teacherPageMain{
+    width: 800px;
+    height: 280px;
+    display: block;
+    margin: 0 auto;
+    /* 고정 사이즈 사용시 : 원본 사이즈 비율 깨질수있음.*/
+    object-fit: cover; /* 비율유지 */
+    border-radius: 20px;
+    
+    
+}
 #teachMeinBox{
-    border: 1px solid gray;
+    border: 1px solid #e8e8e8e8;
 }
 
 #teachMein{
@@ -107,14 +118,14 @@ justify-content: space-between;
 #teachMein > li{
     font-size: 25px;
     font-weight: bold;
-    border: 1px solid red;
+    border: 1px solid #e8e8e8e8;
     width: 200px;
     text-align: center;
 }
 
 
 #teachControloBox{
-    border: 1px solid blue;
+    border: 1px solid #e8e8e8e8;
 }
 
 #teachControl{
@@ -125,7 +136,7 @@ justify-content: space-between;
 #teachControl > li{
     font-size: 20px;
     font-weight: bold;
-    border: 1px solid red;
+    border: 1px solid #e8e8e8e8;
     width: 200px;
     text-align: center;
 }
@@ -133,7 +144,7 @@ justify-content: space-between;
 #teachControl select{
     font-size: 20px;
     font-weight: bold;
-    border: 1px solid red;
+    border: 1px solid #e8e8e8e8;
     width: 200px;
     height: 40px;
     text-align: center;

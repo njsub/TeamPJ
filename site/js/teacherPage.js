@@ -7,7 +7,6 @@
 */
 /* 사이트 이동 */
 
-
 function _cAccount(){
     console.log('cAccount 펑션, 회원가입 사이트 실행')
     location.href='cAccount.html'
@@ -21,8 +20,11 @@ function _signup(){
 
 }
 
+
+// 박시현 작업 시작
+
 document.addEventListener('DOMContentLoaded' , function(){
-let studentArray = []; 
+let studentArray = []; // 회원정보의 ezenMNo (식별값) 가져올 배열 선언 
 
 // 회원 저장 객체배열 불러오기
 let identifyArray = JSON.parse(localStorage.getItem('identifyArray'))
@@ -60,6 +62,7 @@ function 회원출력(){
                 <li>${identifyArray[i].generation}기수</li>
                 <div>
                     <select>
+                        <option name="기수" value="선택"/>선택</option>
                         <option name="기수" value="초기기수"/>0기수</option>
                         <option name="기수" value="1기수"/>1기수</option>
                         <option name="기수" value="2기수"/>2기수</option>
@@ -89,7 +92,7 @@ for(let i = 0 ; i < selects.length; i++){
         for(let z = 0 ; z < identifyArray.length; z++){
             console.log(identifyArray[z].ezenMNo)
             if(id == identifyArray[z].ezenMNo){
-                identifyArray[z].generation = selects[i].selectedIndex
+                identifyArray[z].generation = selects[i].selectedIndex - 1
                 alert(identifyArray[z].generation)
                 localStorage.setItem('identifyArray', JSON.stringify(identifyArray));
                 
