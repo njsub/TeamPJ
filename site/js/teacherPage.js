@@ -39,7 +39,6 @@ function 회원출력(){
                 </ul>`
 
     }// for end
-    
     aaa.innerHTML = html
 } // f end
 
