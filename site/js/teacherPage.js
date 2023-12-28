@@ -5,6 +5,22 @@
 
 
 */
+/* 사이트 이동 */
+
+
+function _cAccount(){
+    console.log('cAccount 펑션, 회원가입 사이트 실행')
+    location.href='cAccount.html'
+
+
+}
+
+function _signup(){
+    console.log('로그인 펑션, 로그인 사이트 실행')
+    location.href='login.html' 
+
+}
+
 document.addEventListener('DOMContentLoaded' , function(){
 let studentArray = []; 
 
@@ -41,6 +57,7 @@ function 회원출력(){
         if(Grade > identifyArray[i].ezenGrade){
             html += `<ul id="teachControl">
                 <li>${identifyArray[i].ezenId}</li>
+                <li>${identifyArray[i].ezenName}</li>
                 <li>${identifyArray[i].generation}기수</li>
                 <div>
                     <select>
@@ -77,7 +94,7 @@ for(let i = 0 ; i < selects.length; i++){
                 identifyArray[z].generation = selects[i].selectedIndex
                 alert(identifyArray[z].generation)
                 localStorage.setItem('identifyArray', JSON.stringify(identifyArray));
-                // 페이지 새로고침...시ㅂ.....ㅠ 밤 11시..10분..ㅠㅠ
+                
                 location.reload()
             }
             
