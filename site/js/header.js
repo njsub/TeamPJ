@@ -1,6 +1,7 @@
 
 document.addEventListener('DOMContentLoaded', function(){
 
+    console.log('header js 실행')
 /* 로그인 안했는데 여기 페이지 들어오면 메인으로 가짐 */
 let ezenLogin = JSON.parse(localStorage.getItem('ezenLogin'))
 if( ezenLogin == null){ alert('권한이 없습니다.'); location.href='../main.html'  }
