@@ -43,6 +43,37 @@ if(ezenLogin == null){alert('접근이불가합니다.'); location.href="../main
 for(let i = 0 ; i < identifyArray.length; i++){
     if(ezenLogin.loginId == identifyArray[i].ezenId){
        console.log('로그인성공')
+        // 여기 부터 
+        /* html 의 변화 */
+    const headerTR = document.querySelector('#headerTR')
+    headerTR.innerHTML = `<input onclick="_logOut()" type="button" value="로그아웃">`
+
+    const myInfo = document.querySelector('#myInfo')
+    let identifyArray = JSON.parse(localStorage.getItem('identifyArray'))
+
+    let ithezenName = '' //이름
+    let ithezenGrade = -1   // 변수 값 저장 공간 ★★ for문 밖에 존재해야함
+    for(let i =0 ; i<identifyArray.length; i++){if(identifyArray[i].ezenId==ezenLogin.loginId){
+        console.log(identifyArray[i].ezenGrade)
+        ithezenName = identifyArray[i].ezenName
+       ithezenGrade = Number(identifyArray[i].ezenGrade);  break; // break가 가장 가까운 반복문 종료
+    }
+    }
+    if(ithezenGrade==1){ithezenGrade = '학생(준회원)🌱'}
+    else if(ithezenGrade==2){ithezenGrade = '학생(정회원)🌿'}
+    else if(ithezenGrade==3){ithezenGrade ='학생(우수회원)🌲'}
+    else if(ithezenGrade==4){ithezenGrade = '강사🌳'}
+    else if(ithezenGrade==5){ithezenGrade = '카페관리자🌞'}
+
+
+    myInfo.innerHTML =`${ithezenName}님<br/>
+    카페 회원 등급 : ${ithezenGrade}<br/>
+    <div onclick="★★()" id="cafeWrite">카페 글 쓰기</div>`
+            //★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★카페 글 쓰기 펑션 및 등급 넣기
+    localStorage.setItem( 'ezenLogin' , JSON.stringify(ezenLogin) )
+
+
+        // 여기까지
        if( !(identifyArray[i].ezenGrade >= 4) ){
         alert('권한이없습니다.')
         location.href="../main.html"
@@ -126,8 +157,16 @@ for(let i = 0 ; i < selects.length; i++){
 
 }
         
+console.log(_logOut)
 
-  
+function _logOut(){         /* 로그아웃 */
+    console.log('로그아웃 펑션 실행')
+    let ezenLogin = JSON.parse(localStorage.getItem('ezenLogin'))
+    console.log(ezenLogin)
+    ezenLogin = null
+    localStorage.setItem( 'ezenLogin' , JSON.stringify(ezenLogin) )
+    location.href='../main.html'
+}
 
 
 }) // e end
