@@ -41,7 +41,7 @@ function afterlogin(){
 
     myInfo.innerHTML =`${ithezenName}님<br/>
     카페 회원 등급 : ${ithezenGrade}<br/>
-    <div onclick="★★()" id="cafeWrite">카페 글 쓰기</div>`
+    <div onclick="cafeWritePage()" id="cafeWrite">카페 글 쓰기</div>`
             //★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★카페 글 쓰기 펑션 및 등급 넣기
     localStorage.setItem( 'ezenLogin' , JSON.stringify(ezenLogin) )
 
@@ -107,3 +107,10 @@ function cafeMembersNo(){ /* 카페멤버 수 세는 함수 */
     
 
 }
+
+function cafeWritePage(){/* 글쓰기 페이지로 가는 함수 */
+    location.href ="html/cafeWritePage.html";
+} 
+
+//==============================================================================================================================================
+
