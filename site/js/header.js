@@ -1,6 +1,6 @@
 
 document.addEventListener('DOMContentLoaded', function(){
-
+    cafeMembersNo() 
     console.log('header js 실행')
 /* 로그인 안했는데 여기 페이지 들어오면 메인으로 가짐 */
 let ezenLogin = JSON.parse(localStorage.getItem('ezenLogin'))
@@ -37,6 +37,9 @@ function afterlogin(){
                                                 </div>`}
     else if(ithezenGrade==5){mainMenu.innerHTML = `<div  class="topLine">
                                                         <a href="/site/html/member.html">회원 관리</a>
+                                                    </div>
+                                                    <div  class="topLine">
+                                                        <a href="/site/html/category.html">카테고리 생성</a>
                                                     </div>
                                                     <div class="topLine">
                                                         <a href="/site/html/teacherPage.html">강사 페이지</a>
@@ -77,5 +80,16 @@ function cafeWritePage(){/* 글쓰기 페이지로 가는 함수 */
     location.href ="../html/cafeWritePage.html";
 } 
 
+function cafeMembersNo(){ /* 카페멤버 수 세는 함수 */
+    console.log('총 멤버수 함수 실행')
+    let html = ``;
+    let identifyArray = JSON.parse(localStorage.getItem('identifyArray'))
+    if(identifyArray==null){html = '0명';}
+    else{html = `${identifyArray.length}명 👨‍👩‍👧‍👦`}
+   document.querySelector('#cafeMembersNo').innerHTML = html
+    
+    
+
+}
 
 //까지가 로그인된 카페 글 쓰기 화면 함수

@@ -43,6 +43,9 @@ function afterlogin(){
     else if(ithezenGrade==5){mainMenu.innerHTML = `<div  class="topLine">
                                                         <a href="/site/html/member.html">회원 관리</a>
                                                     </div>
+                                                    <div  class="topLine">
+                                                        <a href="/site/html/category.html">카테고리 생성</a>
+                                                    </div>
                                                     <div class="topLine">
                                                         <a href="/site/html/teacherPage.html">강사 페이지</a>
                                                     </div>`}
