@@ -20,6 +20,8 @@ function afterlogin(){
     /* html 의 변화 */
     const headerTR = document.querySelector('#headerTR')
     headerTR.innerHTML = `<input onclick="_logOut()" type="button" value="로그아웃">`
+    
+    
 
     const myInfo = document.querySelector('#myInfo')
     let identifyArray = JSON.parse(localStorage.getItem('identifyArray'))
@@ -32,6 +34,21 @@ function afterlogin(){
        ithezenGrade = Number(identifyArray[i].ezenGrade);  break; // break가 가장 가까운 반복문 종료
     }
     }
+     /* 강사, 관리자 로그인 차이 */
+    const mainMenu = document.querySelector('#mainMenu>span')
+
+    if(ithezenGrade==4){mainMenu.innerHTML = `<div class="topLine">
+                                                    <a href="/site/html/teacherPage.html">강사 페이지</a>
+                                                </div>`}
+    else if(ithezenGrade==5){mainMenu.innerHTML = `<div  class="topLine">
+                                                        <a href="/site/html/member.html">회원 관리</a>
+                                                    </div>
+                                                    <div class="topLine">
+                                                        <a href="/site/html/teacherPage.html">강사 페이지</a>
+                                                    </div>`}
+    else { }
+
+    
     if(ithezenGrade==1){ithezenGrade = '학생(준회원)🌱'}
     else if(ithezenGrade==2){ithezenGrade = '학생(정회원)🌿'}
     else if(ithezenGrade==3){ithezenGrade ='학생(우수회원)🌲'}
@@ -49,6 +66,8 @@ function afterlogin(){
 
 
 })
+
+
 
 /* 펑션안에 생으로 펑션 넣기는 안되나봄 */
 

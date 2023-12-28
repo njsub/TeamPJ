@@ -16,7 +16,11 @@ function afterlogin(){
     const headerTR = document.querySelector('#headerTR')
     headerTR.innerHTML = `<input onclick="_logOut()" type="button" value="로그아웃">`
 
+    
+
     localStorage.setItem( 'ezenLogin' , JSON.stringify(ezenLogin) )
+
+    
 
 }
 })
