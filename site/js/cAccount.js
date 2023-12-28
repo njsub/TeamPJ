@@ -50,6 +50,8 @@ function _signup2(){
 
 
     alert('회원가입이 완료 되었습니다.')
-    location.href = '/site/main.html' // 말고 로그인 페이지로 가게 하기
+    if(confirm('바로 로그인 하시겠습니까?')){location.href = '/site/html/login.html'}// 말고 로그인 페이지로 가게 하기
+    else{location.href = '/site/main.html'}
+     
 
 }
