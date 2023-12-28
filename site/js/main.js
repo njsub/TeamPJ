@@ -45,10 +45,6 @@ function afterlogin(){
             //★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★카페 글 쓰기 펑션 및 등급 넣기
     localStorage.setItem( 'ezenLogin' , JSON.stringify(ezenLogin) )
 
-
-
-    
-
 }
 
 
