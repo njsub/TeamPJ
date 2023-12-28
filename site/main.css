@@ -45,7 +45,7 @@ justify-content: space-between;
             font-weight: bold;
         }
 
-        #cafeWrite{     /* 카페 글 쓰기 버튼 */
+        #cafeSignup{     /* 카페 가입하기 버튼 */
             margin-top: 10px;
             text-align: center;
             border: 1px solid gray;
@@ -55,11 +55,26 @@ justify-content: space-between;
             color: white;
         }
         
-        #cafeWrite:hover{
+        #cafeSignup:hover{
             text-decoration: underline;
             cursor: pointer;
         }
 
+        
+        #cafeWrite{     /* 카페 글 쓰기 버튼 */
+            margin-top: 10px;
+            text-align: center;
+            border: 1px solid #74bbbe;
+            border-radius: 10px;
+            background-color: #74bbbe;
+            padding: 5px 0px;
+            color: white;
+        }
+        
+        #cafeWrite:hover{
+            text-decoration: underline;
+            cursor: pointer;
+        }
 
     #mainMenu{
         min-height: 700px;
