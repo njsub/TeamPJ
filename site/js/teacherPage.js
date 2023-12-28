@@ -28,8 +28,15 @@ let studentArray = []; // 회원정보의 ezenMNo (식별값) 가져올 배열 �
 
 // 회원 저장 객체배열 불러오기
 let identifyArray = JSON.parse(localStorage.getItem('identifyArray'))
+// 로그인 저장 데이터 가져오기
+let ezenLogin = JSON.parse(localStorage.getItem('ezenLogin'))
 console.log(identifyArray)
 console.log(studentArray)
+console.log(ezenLogin)
+
+if(ezenLogin == null){alert('접근이불가합니다.'); location.href="../main.html"}
+
+
 
 
 회원출력()

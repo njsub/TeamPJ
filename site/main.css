@@ -93,3 +93,14 @@ justify-content: space-between;
         justify-content: space-between;
         padding-bottom: 30px;
     }
+
+
+
+
+    /* mainMenu 쪽 CSS */
+
+    #mainMenu > div{
+        padding: 5px;
+    }
+    
+    a{text-decoration: none; color: black; font-size: 16px; font-weight: bold;}
