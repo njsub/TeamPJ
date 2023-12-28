@@ -13,7 +13,6 @@ console.log(identifyArray[0].generation)
 
 
 
-
 function 회원출력(){
     // 회원배열에 기수 체크
     for(let j = 0 ; j < identifyArray.length; j++){

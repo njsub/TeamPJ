@@ -9,7 +9,7 @@ function _signup2(){
     const ezenName = document.querySelector('#ezenName').value;
     const ezenGrade = document.querySelector('#ezenGrade').value;
 
-    const memberArray = {아이디 : ezenId, 이름 : ezenName, 등급 : ezenGrade, Mno}
+    const memberArray = {아이디 : ezenId, 이름 : ezenName, 등급 : ezenGrade}
     회원목록.push(memberArray);
 
    
