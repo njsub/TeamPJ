@@ -6,7 +6,7 @@
 
 */
 /* 사이트 이동 */
-
+const Grade = 4 // 직급 체크 상수
 function _cAccount(){
     console.log('cAccount 펑션, 회원가입 사이트 실행')
     location.href='cAccount.html'
@@ -33,8 +33,24 @@ let ezenLogin = JSON.parse(localStorage.getItem('ezenLogin'))
 console.log(identifyArray)
 console.log(studentArray)
 console.log(ezenLogin)
+console.log(ezenLogin.loginId)
 
+
+// 비회원 접근시 메인페이지 이동
 if(ezenLogin == null){alert('접근이불가합니다.'); location.href="../main.html"}
+
+// 회원 로그인 
+for(let i = 0 ; i < identifyArray.length; i++){
+    if(ezenLogin.loginId == identifyArray[i].ezenId){
+       console.log('로그인성공')
+       if( !(identifyArray[i].ezenGrade >= 4) ){
+        alert('권한이없습니다.')
+        location.href="../main.html"
+       }
+    }
+}
+
+
 
 
 
@@ -59,7 +75,6 @@ function 회원출력(){
     기수체크();
     let aaa = document.querySelector('#teachControloBox')
     let html = ''
-    const Grade = 4
     for(let i = 0 ; i < identifyArray.length; i++){
         // console.log(identifyArray[i].ezenGrade)
         if(Grade > identifyArray[i].ezenGrade){
