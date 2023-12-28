@@ -13,6 +13,8 @@ if( ezenLogin == null){  }
 else{ afterlogin() } /* 로그인 후 함수 실행 */
 //localStorage.setItem( 'ezenLogin' , JSON.stringify(ezenLogin) )
 
+cafeMembersNo() // 카페 회원수 표시 함수 실행
+
 function afterlogin(){
     console.log('로그인 후 함수 실행')
     /* html 의 변화 */
@@ -21,18 +23,30 @@ function afterlogin(){
 
     const myInfo = document.querySelector('#myInfo')
     let identifyArray = JSON.parse(localStorage.getItem('identifyArray'))
-/*     for(let i =0 ; i<identifyArray.length; i++){if(identifyArray[i].ezenId==ezenLogin.loginId){
+
+    let ithezenGrade = -1   // 변수 값 저장 공간 ★★ for문 밖에 존재해야함
+    for(let i =0 ; i<identifyArray.length; i++){if(identifyArray[i].ezenId==ezenLogin.loginId){
         console.log(identifyArray[i].ezenGrade)
-       Number(identifyArray[i].ezenGrade);  
+       ithezenGrade = Number(identifyArray[i].ezenGrade);  break; // break가 가장 가까운 반복문 종료
     }
-    } */
-   // 이커 어케 뽑누
+    }
+    if(ithezenGrade==1){ithezenGrade = '학생(준회원)'}
+    else if(ithezenGrade==2){ithezenGrade = '학생(정회원)'}
+    else if(ithezenGrade==3){ithezenGrade ='학생(우수회원)'}
+    else if(ithezenGrade==4){ithezenGrade = '강사'}
+    else if(ithezenGrade==5){ithezenGrade = '카페관리자'}
+
 
     myInfo.innerHTML =`${ezenLogin.loginId}님<br/>
-    카페 회원 등급 : ${123}<br/>
+    카페 회원 등급 : ${ithezenGrade}<br/>
     <div onclick="★★()" id="cafeWrite">카페 글 쓰기</div>`
-            //★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★카페 글 쓰기 펑션 및 등급
+            //★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★카페 글 쓰기 펑션 및 등급 넣기
     localStorage.setItem( 'ezenLogin' , JSON.stringify(ezenLogin) )
+
+
+
+    
+
 }
 
 
@@ -60,4 +74,18 @@ function _logOut(){         /* 로그아웃 */
     ezenLogin = null
     localStorage.setItem( 'ezenLogin' , JSON.stringify(ezenLogin) )
     location.href='main.html'
+}
+
+
+
+function cafeMembersNo(){ /* 카페멤버 수 세는 함수 */
+    console.log('총 멤버수 함수 실행')
+    let html = ``;
+    let identifyArray = JSON.parse(localStorage.getItem('identifyArray'))
+    if(identifyArray==null){html = '0명';}
+    else{html = `${identifyArray.length}명`}
+   document.querySelector('#cafeMembersNo').innerHTML = html
+    
+    
+
 }
