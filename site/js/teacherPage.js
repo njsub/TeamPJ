@@ -24,6 +24,7 @@ function _signup(){
 // 박시현 작업 시작
 
 document.addEventListener('DOMContentLoaded' , function(){
+    cafeMembersNo()
 let studentArray = []; // 회원정보의 ezenMNo (식별값) 가져올 배열 선언 
 
 // 회원 저장 객체배열 불러오기
@@ -37,12 +38,12 @@ console.log(ezenLogin.loginId)
 
 
 // 비회원 접근시 메인페이지 이동
-if(ezenLogin == null){alert('접근이불가합니다.'); location.href="../main.html"}
+if(ezenLogin == null){alert('권한이 없습니다.'); location.href="../main.html"}
 
 // 회원 로그인 
 for(let i = 0 ; i < identifyArray.length; i++){
     if(ezenLogin.loginId == identifyArray[i].ezenId){
-       console.log('로그인성공')
+       console.log('로그인 성공')
         // 여기 부터 
         /* html 의 변화 */
     const headerTR = document.querySelector('#headerTR')
@@ -169,7 +170,19 @@ function _logOut(){         /* 로그아웃 */
 }
 
 
-}) // e end
+})
+
+function cafeMembersNo(){ /* 카페멤버 수 세는 함수 */ /* 2023-12-28 승호 추가 */
+    console.log('총 멤버수 함수 실행')
+    let html = ``;
+    let identifyArray = JSON.parse(localStorage.getItem('identifyArray'))
+    if(identifyArray==null){html = '0명';}
+    else{html = `${identifyArray.length}명 👨‍👩‍👧‍👦`}
+   document.querySelector('#cafeMembersNo').innerHTML = html
+    
+    
+
+}// e end
 /*
 
 

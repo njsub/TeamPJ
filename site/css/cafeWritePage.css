@@ -28,6 +28,10 @@ justify-content: space-between;
     margin-top: 30px;
     min-height: 700px;
 }
+.topLine{
+    border-top: 3px solid #74bbbe;
+    padding: 15px;
+}
 
  
 
@@ -36,7 +40,6 @@ justify-content: space-between;
         justify-content: space-between;
         padding-bottom: 30px;
     }
-
 
 
 

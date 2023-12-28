@@ -4,8 +4,6 @@
     // 게시판 부분 높이 700px
 
 */
-ul , li , a {text-decoration: none; list-style-type: none; box-sizing: border-box;}
-
 * { list-style: none;   /* 공통 css */
     margin: 0px;
     padding: 0px;
@@ -53,7 +51,7 @@ justify-content: space-between;
             font-weight: bold;
         }
 
-        #cafeWrite{     /* 카페 글 쓰기 버튼 */
+        #cafeSignup{     /* 카페 가입하기 버튼 */
             margin-top: 10px;
             text-align: center;
             border: 1px solid gray;
@@ -63,11 +61,26 @@ justify-content: space-between;
             color: white;
         }
         
-        #cafeWrite:hover{
+        #cafeSignup:hover{
             text-decoration: underline;
             cursor: pointer;
         }
 
+        
+        #cafeWrite{     /* 카페 글 쓰기 버튼 */
+            margin-top: 10px;
+            text-align: center;
+            border: 1px solid #74bbbe;
+            border-radius: 10px;
+            background-color: #74bbbe;
+            padding: 5px 0px;
+            color: white;
+        }
+        
+        #cafeWrite:hover{
+            text-decoration: underline;
+            cursor: pointer;
+        }
 
     #mainMenu{
         min-height: 700px;
@@ -88,6 +101,17 @@ justify-content: space-between;
     }
 
 
+
+
+    /* mainMenu 쪽 CSS */
+
+    #mainMenu > div{
+        padding: 5px;
+    }
+    
+    a{text-decoration: none; color: black; font-size: 16px; font-weight: bold;}
+
+    
 /* 중앙컨텐츠 시작 */
 
 
@@ -149,3 +173,4 @@ justify-content: space-between;
     height: 40px;
     text-align: center;
 }
+

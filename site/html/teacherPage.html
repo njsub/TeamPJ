@@ -6,6 +6,7 @@
     <title>Page Title</title>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
     <link rel='stylesheet' type='text/css' media='screen' href='/site/css/teacherPage.css'>
+    <script src='/site/js/header.js'></script>
     <script src='/site/js/teacherPage.js'></script>
 </head>
 <body>
@@ -29,19 +30,17 @@
                 <div class="topLine">
                     <div >
                         <img src="/img/capyzou.png" style="width: 80px;"> <br/><b>카페 매니저 : 카피조우</b><br/>
-                        가입자 수★
+                        가입자 수 : <span id="cafeMembersNo"></span>
                     </div>
                     <div id="myInfo">
-                        내 닉네임★<br/>
-                        카페 회원 등급 : 내 등급★<br/>
                         <div onclick="_cAccount()" id="cafeWrite">카페 가입 하기</div>
                     </div>    
                 </div>
-                <div id="mainMenu" class="topLine">
-                    <div>
+                <div id="mainMenu" >
+                    <div class="topLine">
                         <a href="member.html">관리자페이지</a>
                     </div>
-                    <div>
+                    <div class="topLine">
                         <a href="teacherPage.html">강사페이지</a>
                     </div>
                 </div>
@@ -68,7 +67,7 @@
                 <a href="##" style="color: black;">우리 깃 주소★</a>
             </div>
             <div id="footerR">
-                노진섭 김송아 박시현 신승호
+                김송아 박시현 신승호
             </div>
         </div>
     </div>
