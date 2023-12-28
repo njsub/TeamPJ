@@ -32,8 +32,7 @@ let identifyArray = JSON.parse(localStorage.getItem('identifyArray'))
 let ezenLogin = JSON.parse(localStorage.getItem('ezenLogin'))
 console.log(identifyArray)
 console.log(studentArray)
-console.log(ezenLogin)
-console.log(ezenLogin.loginId)
+
 
 
 // 비회원 접근시 메인페이지 이동
