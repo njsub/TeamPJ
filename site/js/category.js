@@ -9,7 +9,7 @@ function 카테고리등록(){
     const gradeBox = document.querySelector('#gradeBox').value;
     const gisuBox = document.querySelector('#gisuBox').value;
 
-    const categoryArray = { 카테고리명 : cateBox, 권한 : gradeBox, 기수 : gisuBox, cno : 카테고리목록.length ==0 ? 1 : Number(카테고리목록[카테고리목록.length-1].cno)+1}
+    const categoryArray = { 카테고리명 : cateBox, 기수 : gisuBox, cno : 카테고리목록.length ==0 ? 1 : Number(카테고리목록[카테고리목록.length-1].cno)+1}
     카테고리목록.push(categoryArray); console.log(categoryArray)
 
    
@@ -39,7 +39,6 @@ function 카테고리목록출력(){
         <tbody id="categoryList">
         <td>${카테고리목록[i].cno}</td>
         <td>${카테고리목록[i].카테고리명}</td>
-        <td>${카테고리목록[i].권한}</td>
         <td>${카테고리목록[i].기수}</td>
         </tbody>
         `
