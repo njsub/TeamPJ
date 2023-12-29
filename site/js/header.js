@@ -1,27 +1,21 @@
-console.log('main js 실행')
 
 document.addEventListener('DOMContentLoaded', function(){
-   
-
-admin() 
-//console.log([JSON.parse(localStorage.getItem('ezenLogin'))])
-
-/* 로그인 후 함수 실행을 위해 */
+    cafeMembersNo() 
+    console.log('header js 실행')
+/* 로그인 안했는데 여기 페이지 들어오면 메인으로 가짐 */
 let ezenLogin = JSON.parse(localStorage.getItem('ezenLogin'))
+if( ezenLogin == null){ alert('권한이 없습니다.'); location.href='../main.html'  }
+/* 로그인 후 함수 실행을 위해 */
+
 console.log(ezenLogin)
 if( ezenLogin == null){  }
-else{ afterlogin() } /* 로그인 후 함수 실행 */
-//localStorage.setItem( 'ezenLogin' , JSON.stringify(ezenLogin) )
-
-cafeMembersNo() // 카페 회원수 표시 함수 실행
+else{ afterlogin() } 
 
 function afterlogin(){
     console.log('로그인 후 함수 실행')
     /* html 의 변화 */
     const headerTR = document.querySelector('#headerTR')
     headerTR.innerHTML = `<input onclick="_logOut()" type="button" value="로그아웃">`
-    
-    
 
     const myInfo = document.querySelector('#myInfo')
     let identifyArray = JSON.parse(localStorage.getItem('identifyArray'))
@@ -34,7 +28,8 @@ function afterlogin(){
        ithezenGrade = Number(identifyArray[i].ezenGrade);  break; // break가 가장 가까운 반복문 종료
     }
     }
-     /* 강사, 관리자 로그인 차이 */
+
+    /* 강사, 관리자 로그인 차이 */
     const mainMenu = document.querySelector('#mainMenu>span')
 
     if(ithezenGrade==4){mainMenu.innerHTML = `<div class="topLine">
@@ -66,26 +61,9 @@ function afterlogin(){
     localStorage.setItem( 'ezenLogin' , JSON.stringify(ezenLogin) )
 
 }
-
-
 })
 
 
-
-/* 펑션안에 생으로 펑션 넣기는 안되나봄 */
-
-function _cAccount(){       /* 회원가입 */
-    console.log('cAccount 펑션, 회원가입 사이트 실행')
-    location.href='html/cAccount.html'
-
-
-}
-
-function _signup(){         /* 로그인 */
-    console.log('로그인 펑션, 로그인 사이트 실행')
-    location.href='html/login.html'
-
-}
 
 function _logOut(){         /* 로그아웃 */
     console.log('로그아웃 펑션 실행')
@@ -93,26 +71,14 @@ function _logOut(){         /* 로그아웃 */
     console.log(ezenLogin)
     ezenLogin = null
     localStorage.setItem( 'ezenLogin' , JSON.stringify(ezenLogin) )
-    location.href='main.html'
-}
-
-function admin(){/* 관리자 추가 */
-    let identifyArray = JSON.parse(localStorage.getItem('identifyArray'))
-    const identify = { ezenId : '관리자',
-    ezenPw : '1234',
-    ezenName : '카피조우',
-    ezenGrade : 5,
-    ezenMNo: 1
-
-}
-
-    if (identifyArray==null){ identifyArray=[]; identifyArray.push(identify)
+    location.href='../main.html'  
 
 
 }
-    
-    localStorage.setItem( 'identifyArray' , JSON.stringify(identifyArray) )
-}
+
+function cafeWritePage(){/* 글쓰기 페이지로 가는 함수 */
+    location.href ="../html/cafeWritePage.html";
+} 
 
 function cafeMembersNo(){ /* 카페멤버 수 세는 함수 */
     console.log('총 멤버수 함수 실행')
@@ -126,9 +92,4 @@ function cafeMembersNo(){ /* 카페멤버 수 세는 함수 */
 
 }
 
-function cafeWritePage(){/* 글쓰기 페이지로 가는 함수 */
-    location.href ="html/cafeWritePage.html";
-} 
-
-//==============================================================================================================================================
-
+//까지가 로그인된 카페 글 쓰기 화면 함수

@@ -1,0 +1,52 @@
+* { list-style: none;   /* 공통 css */
+    margin: 0px;
+    padding: 0px;
+    line-height: 180%;
+    text-decoration: none
+
+}
+
+#allWrap{   /* 전체 묶어주기 */
+    width: 1200px;
+    margin: 0 auto;
+}
+
+#headerTop{ /* 헤더 */
+    display: flex;
+justify-content: space-between;
+}
+
+#headerTR>input{ padding: 5px;}
+
+
+#headerBtm{
+    text-align: center;
+    border-bottom: 3px solid #74bbbe;
+}
+
+#mainInner{ /* 메인 배열 */
+    margin-top: 30px;
+    min-height: 700px;
+}
+.topLine{
+    border-top: 3px solid #74bbbe;
+    padding: 15px;
+}
+
+ 
+
+    #footer{ 
+        display: flex;
+        justify-content: space-between;
+        padding-bottom: 30px;
+    }
+
+
+
+    /* mainMenu 쪽 CSS */
+
+    #mainMenu > div{
+        padding: 5px;
+    }
+    
+    a{text-decoration: none; color: black; font-size: 16px; font-weight: bold;}

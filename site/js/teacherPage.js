@@ -20,10 +20,15 @@ function _signup(){
 
 }
 
+function cafeWritePage(){/* 글쓰기 페이지로 가는 함수 */
+    location.href ="cafeWritePage.html";
+} 
+
 
 // 박시현 작업 시작
 
 document.addEventListener('DOMContentLoaded' , function(){
+    cafeMembersNo()
 let studentArray = []; // 회원정보의 ezenMNo (식별값) 가져올 배열 선언 
 
 // 회원 저장 객체배열 불러오기
@@ -36,12 +41,12 @@ console.log(ezenLogin)
 
 
 // 비회원 접근시 메인페이지 이동
-if(ezenLogin == null){alert('접근이불가합니다.'); location.href="../main.html"}
+if(ezenLogin == null){alert('권한이 없습니다.'); location.href="../main.html"}
 
 // 회원 로그인 
 for(let i = 0 ; i < identifyArray.length; i++){
     if(ezenLogin.loginId == identifyArray[i].ezenId){
-       console.log('로그인성공')
+       console.log('로그인 성공')
         // 여기 부터 
         /* html 의 변화 */
     const headerTR = document.querySelector('#headerTR')
@@ -58,6 +63,23 @@ for(let i = 0 ; i < identifyArray.length; i++){
        ithezenGrade = Number(identifyArray[i].ezenGrade);  break; // break가 가장 가까운 반복문 종료
     }
     }
+
+    /* 강사, 관리자 로그인 차이 */
+    const mainMenu = document.querySelector('#mainMenu>span')
+
+    if(ithezenGrade==4){mainMenu.innerHTML = `<div class="topLine">
+                                                    <a href="/site/html/teacherPage.html">강사 페이지</a>
+                                                </div>`}
+    else if(ithezenGrade==5){mainMenu.innerHTML = `<div  class="topLine">
+                                                        <a href="/site/html/member.html">회원 관리</a>
+                                                    </div>
+                                                    <div  class="topLine">
+                                                        <a href="/site/html/category.html">카테고리 생성</a>
+                                                    </div>
+                                                    <div class="topLine">
+                                                        <a href="/site/html/teacherPage.html">강사 페이지</a>
+                                                    </div>`}
+    else { }
     if(ithezenGrade==1){ithezenGrade = '학생(준회원)🌱'}
     else if(ithezenGrade==2){ithezenGrade = '학생(정회원)🌿'}
     else if(ithezenGrade==3){ithezenGrade ='학생(우수회원)🌲'}
@@ -67,7 +89,7 @@ for(let i = 0 ; i < identifyArray.length; i++){
 
     myInfo.innerHTML =`${ithezenName}님<br/>
     카페 회원 등급 : ${ithezenGrade}<br/>
-    <div onclick="★★()" id="cafeWrite">카페 글 쓰기</div>`
+    <div onclick="cafeWritePage()" id="cafeWrite">카페 글 쓰기</div>`
             //★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★카페 글 쓰기 펑션 및 등급 넣기
     localStorage.setItem( 'ezenLogin' , JSON.stringify(ezenLogin) )
 
@@ -168,7 +190,19 @@ function _logOut(){         /* 로그아웃 */
 }
 
 
-}) // e end
+})
+
+function cafeMembersNo(){ /* 카페멤버 수 세는 함수 */ /* 2023-12-28 승호 추가 */
+    console.log('총 멤버수 함수 실행')
+    let html = ``;
+    let identifyArray = JSON.parse(localStorage.getItem('identifyArray'))
+    if(identifyArray==null){html = '0명';}
+    else{html = `${identifyArray.length}명 👨‍👩‍👧‍👦`}
+   document.querySelector('#cafeMembersNo').innerHTML = html
+    
+    
+
+}// e end
 /*
 
 
