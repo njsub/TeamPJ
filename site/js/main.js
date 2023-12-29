@@ -15,6 +15,36 @@ else{ afterlogin() } /* 로그인 후 함수 실행 */
 
 cafeMembersNo() // 카페 회원수 표시 함수 실행
 
+카테고리생성()
+function 카테고리생성(){
+    let 카테고리목록 = JSON.parse(localStorage.getItem('카테고리목록'))
+    // 1. 어디에
+    const lnbMenu = document.querySelector('#lnbMenu')
+
+    // 2. 무엇을
+    let html = ''
+    for(let i= 0; i<카테고리목록.length; i++){
+        html += `
+        <div  class="topLine">
+            <a onclick="접근권한(${카테고리목록[i].기수})" href="/site/html/member.html">${카테고리목록[i].카테고리명}</a>
+        </div>
+        `;
+    }
+    // 3. 출력
+    lnbMenu.innerHTML = html; 
+}
+
+// function 접근권한(){
+
+//     // 1. 
+//     if (카테고리목록[i].기수 == 카테고리)
+// }
+// if 게시판 접근 권한 = 카테고리목록[i].권한 == 카테고리생성.권한  접근가능
+// else 접근불가
+
+
+
+
 function afterlogin(){
     console.log('로그인 후 함수 실행')
     /* html 의 변화 */
@@ -25,6 +55,8 @@ function afterlogin(){
 
     const myInfo = document.querySelector('#myInfo')
     let identifyArray = JSON.parse(localStorage.getItem('identifyArray'))
+    
+
 
     let ithezenName = '' //이름
     let ithezenGrade = -1   // 변수 값 저장 공간 ★★ for문 밖에 존재해야함
