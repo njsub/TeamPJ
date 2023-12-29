@@ -127,7 +127,8 @@ function 카테고리실행(i){
             기수확인 = identifyArray[i].generation //지금 로그인한 아이디의 기수
             직급확인 = identifyArray[i].ezenGrade
             console.log(기수확인)
-             break; // break가 가장 가까운 반복문 종료
+            
+            break; // break가 가장 가까운 반복문 종료
         }}
 
         console.log(카테고리목록[i].기수)
@@ -138,7 +139,7 @@ function 카테고리실행(i){
         `
         현재카테고리명 = 카테고리목록[i].카테고리명
         mainInnerR.innerHTML = html
-        게시판출력(기수확인)    // 게시판 출력
+        게시판출력()    // 게시판 출력
         }
         else if(카테고리목록[i].기수!=기수확인 ){ alert('본인이 해당하는 기수가 아닙니다.');
         location.href="/site/main.html";
@@ -229,14 +230,14 @@ function cafeWritePage(){/* 글쓰기 페이지로 가는 함수 */
 // 박시현 작업시작 출력
 
 
-function 게시판출력(기수확인){
+function 게시판출력(){
     console.log('게시판출력함수 실행')
     let identifyArray = JSON.parse(localStorage.getItem('identifyArray'))
     let cafeWriteList = JSON.parse(localStorage.getItem('cafeWriteList'))
     let ezenLogin = JSON.parse(localStorage.getItem('ezenLogin'))
     let 카테고리목록 = JSON.parse(localStorage.getItem('카테고리목록'))
     console.log(cafeWriteList)
-    console.log(기수확인+'기수')
+    console.log(기수확인+'기수당')
     console.log(ezenLogin.loginId)
     console.log(현재카테고리명)
     let ezenMNo체크 = 0;
@@ -258,8 +259,8 @@ function 게시판출력(기수확인){
     }
    
     
-    
-    if(기수확인 == 0){
+   
+    if(true){
         for(let i = 0 ; i < identifyArray.length; i++){
             if(ezenLogin.loginId == identifyArray[i].ezenId){
                 ezenMNo체크 = identifyArray[i].ezenMNo
@@ -269,6 +270,7 @@ function 게시판출력(기수확인){
             }
         }
     }
+
 
     if(ezenGrade체크 == 4 || ezenGrade체크 == 5){
         for(let i = 0 ; i <cafeWriteList.length; i++){
@@ -280,7 +282,7 @@ function 게시판출력(기수확인){
         cafeWrite.innerHTML = html; 
     }
 
-    if(기수확인 == 1){
+    if(ezenGrade체크 == 1){
         for(let i = 0 ; i < cafeWriteList.length; i++){
             if(카테고리number == cafeWriteList[i].ctno){
                 console.log('글출력')
@@ -290,7 +292,7 @@ function 게시판출력(기수확인){
         cafeWrite.innerHTML = html; 
     }
 
-    if(기수확인 == 2){
+    if(ezenGrade체크 == 2){
         for(let i = 0 ; i <cafeWriteList.length; i++){
             if(카테고리number == cafeWriteList[i].ctno){
                 console.log('글출력')
@@ -300,8 +302,6 @@ function 게시판출력(기수확인){
         cafeWrite.innerHTML = html; 
     }
     
-
-
 
 
 }
