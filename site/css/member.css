@@ -39,7 +39,7 @@ justify-content: space-between;
     #mainInnerL{/* 메인 L */
         width: 250px;
         text-align: left;
-        border-bottom: 3px solid #74bbbe;
+       
     }
 
         #myInfo{    /* 내 정보 */
