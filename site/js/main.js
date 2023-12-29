@@ -25,7 +25,7 @@ function 카테고리생성(){
     let html = ''
     for(let i= 0; i<카테고리목록.length; i++){
         html += `
-        <div  class="topLine">
+        <div class="topLine">
             <a onclick="접근권한(${카테고리목록[i].기수})" href="/site/html/member.html">${카테고리목록[i].카테고리명}</a>
         </div>
         `;
@@ -39,7 +39,7 @@ function 카테고리생성(){
 //     // 1. 
 //     if (카테고리목록[i].기수 == 카테고리)
 // }
-// if 게시판 접근 권한 = 카테고리목록[i].권한 == 카테고리생성.권한  접근가능
+// if 게시판 접근 권한 = 카테고리목록[i].기수 == ㅇ.권한  접근가능
 // else 접근불가
 
 

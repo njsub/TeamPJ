@@ -6,17 +6,15 @@ function 카테고리등록(){
     // 1. 어디에
 
     const cateBox = document.querySelector('#cateBox').value;
-    const gradeBox = document.querySelector('#gradeBox').value;
     const gisuBox = document.querySelector('#gisuBox').value;
 
-    const categoryArray = { 카테고리명 : cateBox, 기수 : gisuBox, cno : 카테고리목록.length ==0 ? 1 : Number(카테고리목록[카테고리목록.length-1].cno)+1}
+    const categoryArray = { 카테고리명 : cateBox,  기수 : gisuBox, cno : 카테고리목록.length ==0 ? 1 : Number(카테고리목록[카테고리목록.length-1].cno)+1}
     카테고리목록.push(categoryArray); console.log(categoryArray)
 
    
     // 초기화
     
     document.querySelector('#cateBox').value = '';
-    document.querySelector('#gradeBox').value = '';
     document.querySelector('#gisuBox').value = '';
 
     // 3. 출력
