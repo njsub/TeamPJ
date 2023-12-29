@@ -136,7 +136,6 @@ justify-content: space-between;
     /* 고정 사이즈 사용시 : 원본 사이즈 비율 깨질수있음.*/
     object-fit: cover; /* 비율유지 */
     
-    
 }
 
 #teachControloBox{

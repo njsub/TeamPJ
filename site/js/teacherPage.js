@@ -155,22 +155,27 @@ function 회원출력(){
 
 
 
-
+// HTML에 select 문 가져오기
 const selects = document.querySelectorAll('select')
 // querySelectorAll 로 받으면 배열로 받아서 for문으로 돌려야함.
+// selects 배열의 크기만큼 반복문 실행
 for(let i = 0 ; i < selects.length; i++){
+    // 셀렉트에서 change 이벤트 발생했을경우 함수 실행
     selects[i].addEventListener('change' , function(event){
-        console.log(selects[i].selectedIndex)
+        // studentArray 에서 저장된 회원고유번호 ezenMNo 를 id 에 대입
         let id = studentArray[i]
-        console.log(id)
-        // id 값하고 회원넘버 비교해서 값 넣어줘야함....
+
+        // 대입한 id와 비교하기 위해 회원배열객체 identifyArray 반복 
         for(let z = 0 ; z < identifyArray.length; z++){
-            console.log(identifyArray[z].ezenMNo)
+            // id 와 회원객체와 고유번호가 같으면..
             if(id == identifyArray[z].ezenMNo){
+                // 회원객체에 등급 지정 (기초값인 선택옵션이  있기에 -1 )
                 identifyArray[z].generation = selects[i].selectedIndex - 1
+                // 확인 출력
                 alert(identifyArray[z].generation)
+                // localStorage 회원객체 저장
                 localStorage.setItem('identifyArray', JSON.stringify(identifyArray));
-                
+                // 페이지 새로고침
                 location.reload()
             }
             
@@ -210,25 +215,27 @@ function cafeMembersNo(){ /* 카페멤버 수 세는 함수 */ /* 2023-12-28 승
 
 function 게시판출력(){
     console.log('게시판출력함수 실행')
+    // 회원정보 가져오기
     let identifyArray = JSON.parse(localStorage.getItem('identifyArray'))
+    // 글 목록 가져오기
     let cafeWriteList = JSON.parse(localStorage.getItem('cafeWriteList'))
+    // 현재 로그인 계정 가져오기
     let ezenLogin = JSON.parse(localStorage.getItem('ezenLogin'))
+    // 카페 카테고리목록 가져오기
     let 카테고리목록 = JSON.parse(localStorage.getItem('카테고리목록'))
-    console.log(cafeWriteList)
-    console.log(기수확인+'기수당')
-    console.log(ezenLogin.loginId)
-    console.log(현재카테고리명)
+    // 회원의 고유넘버 체크
     let ezenMNo체크 = 0;
+    // 회원의 등급체크 ( 관리자5 강사 4 )
     let ezenGrade체크 = 0;
+    // 카테고리 고유번호 저장
     let 카테고리number = 0;
     let html = '';  //출력 저장
-
 
         if( cafeWriteList == null){ cafeWriteList = [] ;}; // 만약에 localStorage 아무것도 없으면 배열 선언
 
     // 출력 위치
     const cafeWrite = document.querySelector('#mainText');
-
+    // 현재 카테고리 및 카테고리목록을 조회하여 카테고리 고유 번호 저장
     for(let i = 0 ; i < 카테고리목록.length; i++){
         if(현재카테고리명 == 카테고리목록[i].카테고리명){
             카테고리number = 카테고리목록[i].cno
@@ -236,8 +243,7 @@ function 게시판출력(){
         }
     }
    
-    
-   
+    // 현재로그인 계정과 회원배열 조회하여 회원의 고유넘버 및 등급 저장
     if(true){
         for(let i = 0 ; i < identifyArray.length; i++){
             if(ezenLogin.loginId == identifyArray[i].ezenId){
@@ -249,7 +255,7 @@ function 게시판출력(){
         }
     }
 
-
+    // 각 등급에 맞게 출력한다.
     if(ezenGrade체크 == 4 || ezenGrade체크 == 5){
         for(let i = 0 ; i <cafeWriteList.length; i++){
             if(카테고리number == cafeWriteList[i].ctno){
