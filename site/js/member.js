@@ -1,49 +1,124 @@
 console.log('')
 document.addEventListener('DOMContentLoaded' , function(){
     // 회원 저장 객체배열 불러오기
-    카테고리실행(i)
     
     회원목록출력()
     })
 
-let 기수확인 = '';
-function 카테고리실행(i){
-    console.log('카테고리 눌렀을 때 실행')
-    // 일단 권한 확인
-    let 카테고리목록 = JSON.parse(localStorage.getItem('카테고리목록'))
-    let ezenLogin = JSON.parse(localStorage.getItem('ezenLogin'))
-    let identifyArray = JSON.parse(localStorage.getItem('identifyArray'))
-    const mainInnerR = document.querySelector('#mainInnerR')
-
-    let html = '';
-        for(let i =0 ; i<identifyArray.length; i++){if(identifyArray[i].ezenId==ezenLogin.loginId){
-           
-            기수확인 = identifyArray[i].generation //지금 로그인한 아이디의 기수
-            console.log(기수확인)
-             break; // break가 가장 가까운 반복문 종료
-        }}
-
-        console.log(카테고리목록[i].기수)
-        if(ezenLogin.loginId == '관리자'){ /* 관리자면 실행하게 */
-            
-
-        html += `<h2>${카테고리목록[i].카테고리명}</h2>
-        <div style="border-bottom: black 1px solid; height: 10px"> </div>
-        `
+    function 카테고리실행(i){
     
-        mainInnerR.innerHTML = html
-
-            
-            return; }
-
-        else if(카테고리목록[i].기수!=기수확인 ){ alert('본인이 해당하는 기수가 아닙니다.');
-        location.href="/site/main.html";
-    }
-
-    //확인 완료
+        console.log('카테고리 눌렀을 때 실행')
+        // 일단 권한 확인
+        let 카테고리목록 = JSON.parse(localStorage.getItem('카테고리목록'))
+        let ezenLogin = JSON.parse(localStorage.getItem('ezenLogin'))
+        let identifyArray = JSON.parse(localStorage.getItem('identifyArray'))
+        const mainInnerR = document.querySelector('#mainInnerR')
+        let 직급확인 = 0;
+        if( ezenLogin == null){
+            alert('로그인 후 이용해주세요.'); location.href="/site/main.html"
         }
-
-
+    
+        let html = '';
+            for(let i =0 ; i<identifyArray.length; i++){if(identifyArray[i].ezenId==ezenLogin.loginId){
+               
+                기수확인 = identifyArray[i].generation //지금 로그인한 아이디의 기수
+                직급확인 = identifyArray[i].ezenGrade
+                console.log(기수확인)
+                 break; // break가 가장 가까운 반복문 종료
+            }}
+    
+            console.log(카테고리목록[i].기수)
+            if(ezenLogin.loginId == '관리자' || 직급확인 == 4 || 카테고리목록[i].기수 == 기수확인 ){ /* 관리자면 실행하게 */
+                
+            html += `<h2>${카테고리목록[i].카테고리명} 게시판</h2>
+            <div style="border-bottom: black 1px solid; height: 10px"> </div>
+            `
+            현재카테고리명 = 카테고리목록[i].카테고리명
+            mainInnerR.innerHTML = html
+            게시판출력(기수확인)    // 게시판 출력
+            }
+            else if(카테고리목록[i].기수!=기수확인 ){ alert('본인이 해당하는 기수가 아닙니다.');
+            location.href="/site/main.html";
+            
+           
+        }
+        
+        //확인 완료
+        
+            }
+            function 게시판출력(기수확인){
+                console.log('게시판출력함수 실행')
+                let identifyArray = JSON.parse(localStorage.getItem('identifyArray'))
+                let cafeWriteList = JSON.parse(localStorage.getItem('cafeWriteList'))
+                let ezenLogin = JSON.parse(localStorage.getItem('ezenLogin'))
+                let 카테고리목록 = JSON.parse(localStorage.getItem('카테고리목록'))
+                console.log(cafeWriteList)
+                console.log(기수확인+'기수')
+                console.log(ezenLogin.loginId)
+                console.log(현재카테고리명)
+                let ezenMNo체크 = 0;
+                let ezenGrade체크 = 0;
+                let 카테고리number = 0;
+                let html = '';  //출력 저장
+                // 출력 위치
+                const cafeWrite = document.querySelector('#mainText');
+            
+                for(let i = 0 ; i < 카테고리목록.length; i++){
+                    if(현재카테고리명 == 카테고리목록[i].카테고리명){
+                        카테고리number = 카테고리목록[i].cno
+                        console.log(`${카테고리number} 카테고리number`)
+                    }
+                }
+               
+                
+                
+                if(기수확인 == 0){
+                    for(let i = 0 ; i < identifyArray.length; i++){
+                        if(ezenLogin.loginId == identifyArray[i].ezenId){
+                            ezenMNo체크 = identifyArray[i].ezenMNo
+                            ezenGrade체크 = identifyArray[i].ezenGrade
+                            console.log(ezenMNo체크)
+                            console.log(ezenGrade체크)
+                        }
+                    }
+                }
+            
+                if(ezenGrade체크 == 4 || ezenGrade체크 == 5){
+                    for(let i = 0 ; i <cafeWriteList.length; i++){
+                        if(카테고리number == cafeWriteList[i].ctno){
+                            console.log('글출력은 되나?')
+                            html += `<div>${cafeWriteList[i].cfTitle}${cafeWriteList[i].cfContent}${cafeWriteList[i].cfdate}</div>`
+                        }
+                    }
+                    cafeWrite.innerHTML = html; 
+                }
+            
+                if(기수확인 == 1){
+                    for(let i = 0 ; i < cafeWriteList.length; i++){
+                        if(카테고리number == cafeWriteList[i].ctno){
+                            console.log('글출력은 되나?')
+                            html += `<div>${cafeWriteList[i].cfTitle}${cafeWriteList[i].cfContent}${cafeWriteList[i].cfdate}</div>`
+                        }
+                    }
+                    cafeWrite.innerHTML = html; 
+                }
+            
+                if(기수확인 == 2){
+                    for(let i = 0 ; i <cafeWriteList.length; i++){
+                        if(카테고리number == cafeWriteList[i].ctno){
+                            console.log('글출력은 되나?')
+                            html += `<div>${cafeWriteList[i].cfTitle}${cafeWriteList[i].cfContent}${cafeWriteList[i].cfdate}</div>`
+                        }
+                    }
+                    cafeWrite.innerHTML = html; 
+                }
+                
+            
+            
+            
+            
+            }
+    
 
 
 function 삭제버튼(index){  
@@ -73,11 +148,11 @@ function 회원목록출력(){
     for(let i= 1; i<identifyArray.length; i++){
         html += `
         <tbody id="memberList">
-        <td>1</td>
+        <td>${identifyArray[i].ezenMNo}</td>
         <td>${identifyArray[i].ezenId}</td>
         <td>${identifyArray[i].ezenName}</td>
         <td>${identifyArray[i].ezenGrade}</td>
-        <td>${identifyArray[i].ezenGrade}</td>
+        <td>${identifyArray[i].generation}</td>
         <td><button onclick="삭제버튼(${i})" value="삭제">삭제</button></td>
         </tbody>
         `
