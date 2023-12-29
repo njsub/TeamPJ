@@ -112,9 +112,17 @@ function 게시글등록(){
     const cfContent = document.querySelector('textarea').value;
     // 현재 로그인중인 ID와 회원배열에있는 값 비교하여 ezenMNo 가져오기
     let ezenMNo = 0;
+    let cno = 0;
     for(let i = 0; i < identifyArray.length; i++){
         if(ezenLogin.loginId == identifyArray[i].ezenId){
             ezenMNo = identifyArray[i].ezenMNo
+        }
+    }
+
+    for(let i = 0 ; i < 카테고리목록.length; i++){
+        if(cfSelect == 카테고리목록[i].카테고리명){
+            console.log(`${카테고리목록[i].cno} 카테고리목록값`)
+            cno = 카테고리목록[i].cno
         }
     }
 
@@ -123,6 +131,7 @@ function 게시글등록(){
       // 유효성 검사
       if(cfTitle.length < 1){ alert('제목을 입력해주세요.'); return};
       if(cfSelect == '선택'){ alert('게시판을 선택하세요.'); return};
+      if(cfSelect == ''){ alert('게시판을 선택하세요.'); return};
       if(cfContent.length < 1){ alert('내용을 입력해주세요.'); return};
 
        //  localStorage 호출하여 글쓸 공간(배열)이 없으면 생성 
@@ -137,6 +146,7 @@ function 게시글등록(){
         cfsel : cfSelect , // 게시판 선택
         cfdate : new Date()  ,   // 날짜시간 저장
         cfContent : cfContent.replaceAll('\n' , '<br/>') ,      // 문자열.replaceAll('교체할문자' , '새로운문자')
+        ctno : cno
     }
 
     // 글 저장 배열에 글 객체 저장
