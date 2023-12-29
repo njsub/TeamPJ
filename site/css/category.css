@@ -128,7 +128,7 @@ table {
     border: 1px solid black;
     width: 920px;
     text-align: center;
-    margin-bottom: 100px;
+    margin-bottom: 50px;
 }
 table tr th {
     border:  1px solid black;
@@ -138,11 +138,16 @@ table tr td {
     border: 1px solid black;
     padding: 10px;
 }
+#categoryBox2{
+    margin-bottom: 100px;
+}
+
 #categoryBox2 input {
     padding: 10px;
 }
 #categoryBox2 button {
     padding: 9px;
+    
 }
 #categoryBox2 span { 
     margin-right: 10px;

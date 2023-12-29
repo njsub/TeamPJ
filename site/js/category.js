@@ -1,8 +1,9 @@
 document.addEventListener('DOMContentLoaded', function(){
     카테고리목록출력()
     카테고리실행(i)
+    
 })
-
+let 기수확인 = '';
 function 카테고리실행(i){
     console.log('카테고리 눌렀을 때 실행')
     // 일단 권한 확인
@@ -39,6 +40,35 @@ function 카테고리실행(i){
     //확인 완료
         }
 
+
+       
+        function 카테고리생성(){
+            let 카테고리목록 = JSON.parse(localStorage.getItem('카테고리목록'))
+            // 1. 어디에
+            const lnbMenu = document.querySelector('#lnbMenu')
+            
+            
+            // 2. 무엇을
+            let html = '';
+           
+            for(let i= 0; i<카테고리목록.length; i++){
+                html += `
+                <div class="mainMenuS" onclick="카테고리실행(${i})">
+                    <a >${카테고리목록[i].카테고리명}</a>
+                </div>
+                `;
+                /* 메인 이너R에 넣을 html 정하기 */
+              
+            }
+            // 3. 출력
+            
+            lnbMenu.innerHTML = html; 
+            
+        }
+        
+
+        
+
 function 카테고리등록(){
     let 카테고리목록 = JSON.parse(localStorage.getItem('카테고리목록'))
     if (카테고리목록==null){ 카테고리목록=[]}
@@ -60,7 +90,7 @@ function 카테고리등록(){
     localStorage.setItem('카테고리목록' , JSON.stringify(카테고리목록) )
     카테고리목록출력()
     
-
+    카테고리생성()
 }
 
 function 카테고리목록출력(){
