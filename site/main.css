@@ -88,7 +88,20 @@ justify-content: space-between;
     #mainInnerR{    /*참고 !! 메인 이너 size !! 참고*/
         width: 920px;
     }
-
+    #mainInnerR>div{
+        font-size: 30px;
+        font-weight: bold;
+        padding: 20px;
+        text-align: center;
+        background-color: #74bbbe;
+        color: white;
+        
+    }
+    #mainInnerR>img{
+        width: 100%;
+        margin-top: 30px;
+        height: 600px;
+    }
     
 
 
