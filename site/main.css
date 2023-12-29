@@ -60,6 +60,7 @@ justify-content: space-between;
         #cafeSignup:hover{
             text-decoration: underline;
             cursor: pointer;
+            background-color: rgb(80, 80, 80);
         }
 
         
@@ -76,6 +77,7 @@ justify-content: space-between;
         #cafeWrite:hover{
             text-decoration: underline;
             cursor: pointer;
+            background-color: #40bcc1;
         }
 
     #mainMenu{
@@ -101,8 +103,4 @@ justify-content: space-between;
 
     /* mainMenu 쪽 CSS */
 
-    #mainMenu > div{
-        padding: 5px;
-    }
-    
     a{text-decoration: none; color: black; font-size: 16px; font-weight: bold;}
