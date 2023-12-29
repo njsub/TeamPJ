@@ -23,6 +23,54 @@ function afterlogin(){
     
 
 }
+
+// 박시현 작업 회원정보를 비교하여 글을 쓸수있는 카테고리만 선택가능
+
+
+// 회원정보 가져오기
+let identifyArray = JSON.parse(localStorage.getItem('identifyArray'))
+// 카테고리 목록 가져오기
+let 카테고리목록 = JSON.parse(localStorage.getItem('카테고리목록'))  
+// console.log(ezenLogin.loginId)
+// console.log(카테고리목록[0].기수)
+const contentSelect = document.querySelector('#contentSelect');
+let 기수체크 = 0;
+let 신분체크 = 0;
+let html = '';
+
+ // 현재 로그인중인 ID와 회원배열에있는 값 비교하여 기수값(generation) 가져오기 
+ for(let i = 0; i < identifyArray.length; i++){
+    if(ezenLogin.loginId == identifyArray[i].ezenId){
+        기수체크 = identifyArray[i].generation
+        신분체크 = identifyArray[i].ezenGrade
+    }
+}
+for(let i = 0 ; i < 카테고리목록.length; i++ ){
+    // 관리자나 강사는 모든글 쓰기 가능
+    if(신분체크 == 4 || 신분체크 == 5){
+        html += `<option>${카테고리목록[i].카테고리명}</option>`
+    }
+    // console.log(카테고리목록[i].기수)
+    // console.log(카테고리목록[i].카테고리명)
+    if( 기수체크 == 카테고리목록[i].기수){
+        console.log(카테고리목록[i].카테고리명)
+        html += `<option>${카테고리목록[i].카테고리명}</option>`
+    }
+    
+}
+console.log(html)
+contentSelect.innerHTML = html;
+
+
+
+
+// 박시현 작업 끝
+
+
+
+
+
+
 })
 
 
@@ -53,6 +101,7 @@ function cafeWritePage(){/* 글쓰기 페이지로 가는 함수 */
 //박시현 작업 끝 2023-12-28 23:28
 // 내일 마무리로 선택가능한 게시판만 보여주게 하면 될것 같다...
 
+
 // 전역변수
     // 회원정보 가져오기
     let identifyArray = JSON.parse(localStorage.getItem('identifyArray'))
@@ -62,30 +111,7 @@ function cafeWritePage(){/* 글쓰기 페이지로 가는 함수 */
     let 카테고리목록 = JSON.parse(localStorage.getItem('카테고리목록'))  
     // console.log(ezenLogin.loginId)
     // console.log(카테고리목록[0].기수)
-    const contentSelect = document.querySelector('#contentSelect');
-    let 기수체크 = 0;
-    let html = '';
-    
-    
 
-     // 현재 로그인중인 ID와 회원배열에있는 값 비교하여 기수값(generation) 가져오기 
-    for(let i = 0; i < identifyArray.length; i++){
-        if(ezenLogin.loginId == identifyArray[i].ezenId){
-            기수체크 = identifyArray[i].generation
-        }
-    }
-    for(let i = 0 ; i < 카테고리목록.length; i++ ){
-        
-        // console.log(카테고리목록[i].기수)
-        // console.log(카테고리목록[i].카테고리명)
-        if( 1 == 카테고리목록[i].기수){
-            console.log(카테고리목록[i].카테고리명)
-            html += `<option">${카테고리목록[i].카테고리명}</option>`
-        }
-    }
-    contentSelect.innerHTML = html;
-
-    
 
 function 게시글등록(){
 
