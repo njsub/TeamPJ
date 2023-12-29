@@ -254,7 +254,7 @@ function 게시판출력(){
         for(let i = 0 ; i <cafeWriteList.length; i++){
             if(카테고리number == cafeWriteList[i].ctno){
                 console.log('글출력')
-                html += `<div>${cafeWriteList[i].cID}${cafeWriteList[i].cfTitle}${cafeWriteList[i].cfContent}${cafeWriteList[i].cfdate}</div>`
+                html += `<div style="padding: 15px; border-bottom: 1px solid lightgray"><div style="font-weight: bold; font-size:20px">제목 : ${cafeWriteList[i].cfTitle}</div>내용 : ${cafeWriteList[i].cfContent}<div>글쓴이 : ${cafeWriteList[i].cID}</div><div>작성일 : ${cafeWriteList[i].cfdate}</div></div>`
             }
         }
         cafeWrite.innerHTML = html; 
@@ -264,7 +264,7 @@ function 게시판출력(){
         for(let i = 0 ; i < cafeWriteList.length; i++){
             if(카테고리number == cafeWriteList[i].ctno){
                 console.log('글출력')
-                html += `<div>${cafeWriteList[i].cID}${cafeWriteList[i].cfTitle}${cafeWriteList[i].cfContent}${cafeWriteList[i].cfdate}</div>`
+                html += `<div style="padding: 15px; border-bottom: 1px solid lightgray"><div style="font-weight: bold; font-size:20px">제목 : ${cafeWriteList[i].cfTitle}</div>내용 : ${cafeWriteList[i].cfContent}<div>글쓴이 : ${cafeWriteList[i].cID}</div><div>작성일 : ${cafeWriteList[i].cfdate}</div></div>`
             }
         }
         cafeWrite.innerHTML = html; 
@@ -274,7 +274,7 @@ function 게시판출력(){
         for(let i = 0 ; i <cafeWriteList.length; i++){
             if(카테고리number == cafeWriteList[i].ctno){
                 console.log('글출력')
-                html += `<div>${cafeWriteList[i].cID}${cafeWriteList[i].cfTitle}${cafeWriteList[i].cfContent}${cafeWriteList[i].cfdate}</div>`
+                html += `<div style="padding: 15px; border-bottom: 1px solid lightgray"><div style="font-weight: bold; font-size:20px">제목 : ${cafeWriteList[i].cfTitle}</div>내용 : ${cafeWriteList[i].cfContent}<div>글쓴이 : ${cafeWriteList[i].cID}</div><div>작성일 : ${cafeWriteList[i].cfdate}</div></div>`
             }
         }
         cafeWrite.innerHTML = html; 
