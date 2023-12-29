@@ -47,15 +47,48 @@ function cafeWritePage(){/* 글쓰기 페이지로 가는 함수 */
 //까지가 로그인된 카페 글 쓰기 화면 함수
 
 
+
+
+
 //박시현 작업 끝 2023-12-28 23:28
 // 내일 마무리로 선택가능한 게시판만 보여주게 하면 될것 같다...
 
-function 게시글등록(){
+// 전역변수
     // 회원정보 가져오기
     let identifyArray = JSON.parse(localStorage.getItem('identifyArray'))
     // 현재 로그인중인 회원 가져오기
-    let ezenLogin = JSON.parse(localStorage.getItem('ezenLogin'))   
-    console.log(ezenLogin.loginId)
+    let ezenLogin = JSON.parse(localStorage.getItem('ezenLogin')) 
+    // 카테고리 목록 가져오기
+    let 카테고리목록 = JSON.parse(localStorage.getItem('카테고리목록'))  
+    // console.log(ezenLogin.loginId)
+    // console.log(카테고리목록[0].기수)
+    const contentSelect = document.querySelector('#contentSelect');
+    let 기수체크 = 0;
+    let html = '';
+    
+    
+
+     // 현재 로그인중인 ID와 회원배열에있는 값 비교하여 기수값(generation) 가져오기 
+    for(let i = 0; i < identifyArray.length; i++){
+        if(ezenLogin.loginId == identifyArray[i].ezenId){
+            기수체크 = identifyArray[i].generation
+        }
+    }
+    for(let i = 0 ; i < 카테고리목록.length; i++ ){
+        
+        // console.log(카테고리목록[i].기수)
+        // console.log(카테고리목록[i].카테고리명)
+        if( 1 == 카테고리목록[i].기수){
+            console.log(카테고리목록[i].카테고리명)
+            html += `<option">${카테고리목록[i].카테고리명}</option>`
+        }
+    }
+    contentSelect.innerHTML = html;
+
+    
+
+function 게시글등록(){
+
     // 글쓰기 값 가져오기
     const cfTitle = document.querySelector('#cftitle').value
     const cfSelect = document.querySelector('#contentSelect').value
@@ -67,6 +100,8 @@ function 게시글등록(){
             ezenMNo = identifyArray[i].ezenMNo
         }
     }
+
+    // 사용가능한 카테고리만 보여주기.....
 
       // 유효성 검사
       if(cfTitle.length < 1){ alert('제목을 입력해주세요.'); return};
