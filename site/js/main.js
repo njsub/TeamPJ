@@ -242,6 +242,10 @@ function 게시판출력(기수확인){
     let ezenGrade체크 = 0;
     let 카테고리number = 0;
     let html = '';  //출력 저장
+
+
+        if( cafeWriteList == null){ cafeWriteList = [] ;}; // 만약에 localStorage 아무것도 없으면 배열 선언
+
     // 출력 위치
     const cafeWrite = document.querySelector('#mainText');
 
@@ -268,8 +272,8 @@ function 게시판출력(기수확인){
     if(ezenGrade체크 == 4 || ezenGrade체크 == 5){
         for(let i = 0 ; i <cafeWriteList.length; i++){
             if(카테고리number == cafeWriteList[i].ctno){
-                console.log('글출력은 되나?')
-                html += `<div>${cafeWriteList[i].cfTitle}${cafeWriteList[i].cfContent}${cafeWriteList[i].cfdate}</div>`
+                console.log('글출력')
+                html += `<div>${cafeWriteList[i].cID}${cafeWriteList[i].cfTitle}${cafeWriteList[i].cfContent}${cafeWriteList[i].cfdate}</div>`
             }
         }
         cafeWrite.innerHTML = html; 
@@ -278,8 +282,8 @@ function 게시판출력(기수확인){
     if(기수확인 == 1){
         for(let i = 0 ; i < cafeWriteList.length; i++){
             if(카테고리number == cafeWriteList[i].ctno){
-                console.log('글출력은 되나?')
-                html += `<div>${cafeWriteList[i].cfTitle}${cafeWriteList[i].cfContent}${cafeWriteList[i].cfdate}</div>`
+                console.log('글출력')
+                html += `<div>${cafeWriteList[i].cID}${cafeWriteList[i].cfTitle}${cafeWriteList[i].cfContent}${cafeWriteList[i].cfdate}</div>`
             }
         }
         cafeWrite.innerHTML = html; 
@@ -288,8 +292,8 @@ function 게시판출력(기수확인){
     if(기수확인 == 2){
         for(let i = 0 ; i <cafeWriteList.length; i++){
             if(카테고리number == cafeWriteList[i].ctno){
-                console.log('글출력은 되나?')
-                html += `<div>${cafeWriteList[i].cfTitle}${cafeWriteList[i].cfContent}${cafeWriteList[i].cfdate}</div>`
+                console.log('글출력')
+                html += `<div>${cafeWriteList[i].cID}${cafeWriteList[i].cfTitle}${cafeWriteList[i].cfContent}${cafeWriteList[i].cfdate}</div>`
             }
         }
         cafeWrite.innerHTML = html; 

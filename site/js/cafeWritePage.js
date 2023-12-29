@@ -113,9 +113,11 @@ function 게시글등록(){
     // 현재 로그인중인 ID와 회원배열에있는 값 비교하여 ezenMNo 가져오기
     let ezenMNo = 0;
     let cno = 0;
+    let ID = ''
     for(let i = 0; i < identifyArray.length; i++){
         if(ezenLogin.loginId == identifyArray[i].ezenId){
             ezenMNo = identifyArray[i].ezenMNo
+            ID = identifyArray[i].ezenId
         }
     }
 
@@ -146,7 +148,8 @@ function 게시글등록(){
         cfsel : cfSelect , // 게시판 선택
         cfdate : new Date()  ,   // 날짜시간 저장
         cfContent : cfContent.replaceAll('\n' , '<br/>') ,      // 문자열.replaceAll('교체할문자' , '새로운문자')
-        ctno : cno
+        ctno : cno , 
+        cID : ID
     }
 
     // 글 저장 배열에 글 객체 저장
