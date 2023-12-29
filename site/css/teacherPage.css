@@ -84,6 +84,7 @@ justify-content: space-between;
         #cafeWrite:hover{
             text-decoration: underline;
             cursor: pointer;
+            background-color: #40bcc1;
         }
 
     #mainMenu{
@@ -109,11 +110,20 @@ justify-content: space-between;
 
     /* mainMenu 쪽 CSS */
 
-    #mainMenu > div{
-        padding: 5px;
-    }
-    
+
     a{text-decoration: none; color: black; font-size: 16px; font-weight: bold;}
+
+    .mainMenuS{
+        padding: 8px 30px;
+        border-top: 1px solid #e8e8e8;
+        color: rgb(159, 159, 159);
+    }
+
+    .mainMenuS:hover{
+        cursor: pointer;
+        text-decoration: underline;
+        color: black;
+    }
 
 /* 중앙컨텐츠 시작 */
 
@@ -125,7 +135,6 @@ justify-content: space-between;
     margin: 0 auto;
     /* 고정 사이즈 사용시 : 원본 사이즈 비율 깨질수있음.*/
     object-fit: cover; /* 비율유지 */
-    border-radius: 20px;
     
     
 }
@@ -174,3 +183,4 @@ table tr td {
 h3 {
     margin: 20px 0 15px;
 }
+

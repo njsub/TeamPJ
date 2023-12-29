@@ -71,11 +71,12 @@ justify-content: space-between;
             padding: 5px 0px;
             color: white;
         }
-        
         #cafeWrite:hover{
             text-decoration: underline;
             cursor: pointer;
+            background-color: #40bcc1;
         }
+
 
     #mainMenu{
         min-height: 700px;
@@ -98,13 +99,21 @@ justify-content: space-between;
 
 
 
-    /* mainMenu 쪽 CSS */
+ 
 
-    #mainMenu > div{
-        padding: 5px;
-    }
-    
     a{text-decoration: none; color: black; font-size: 16px; font-weight: bold;}
+
+    .mainMenuS{
+        padding: 8px 30px;
+        border-top: 1px solid #e8e8e8;
+        color: rgb(159, 159, 159);
+    }
+
+    .mainMenuS:hover{
+        cursor: pointer;
+        text-decoration: underline;
+        color: black;
+    }
 
 
 
