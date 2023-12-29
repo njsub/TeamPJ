@@ -117,3 +117,15 @@ justify-content: space-between;
     /* mainMenu 쪽 CSS */
 
     a{text-decoration: none; color: black; font-size: 16px; font-weight: bold;}
+
+    .mainMenuS{
+        padding: 8px 30px;
+        border-top: 1px solid #e8e8e8;
+        color: rgb(159, 159, 159);
+    }
+
+    .mainMenuS:hover{
+        cursor: pointer;
+        text-decoration: underline;
+        color: black;
+    }
