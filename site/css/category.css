@@ -107,13 +107,17 @@ justify-content: space-between;
     a{text-decoration: none; color: black; font-size: 16px; font-weight: bold;}
 
 
+
+
 /* main CSS 여기 까지 */
 
 
-
+h3 {
+    margin-bottom: 20px;
+}
 table {
     border: 1px solid black;
-    width: 30%;
+    width: 920px;
     text-align: center;
     margin-bottom: 100px;
 }
@@ -134,3 +138,13 @@ table tr td {
 #categoryBox2 span { 
     margin-right: 10px;
 }
+#img_box {
+    width: 960px;
+    height: 200px;
+    background-image: url(/img/sub_img1.jpg);
+    background-size: cover;
+}
+
+/* #img_box > img {
+    width: 100%;
+} */
