@@ -46,6 +46,79 @@ function 카테고리실행(i){
     
         }
 
+        function 게시판출력(기수확인){
+            console.log('게시판출력함수 실행')
+            let identifyArray = JSON.parse(localStorage.getItem('identifyArray'))
+            let cafeWriteList = JSON.parse(localStorage.getItem('cafeWriteList'))
+            let ezenLogin = JSON.parse(localStorage.getItem('ezenLogin'))
+            let 카테고리목록 = JSON.parse(localStorage.getItem('카테고리목록'))
+            console.log(cafeWriteList)
+            console.log(기수확인+'기수')
+            console.log(ezenLogin.loginId)
+            console.log(현재카테고리명)
+            let ezenMNo체크 = 0;
+            let ezenGrade체크 = 0;
+            let 카테고리number = 0;
+            let html = '';  //출력 저장
+            // 출력 위치
+            const cafeWrite = document.querySelector('#mainText');
+        
+            for(let i = 0 ; i < 카테고리목록.length; i++){
+                if(현재카테고리명 == 카테고리목록[i].카테고리명){
+                    카테고리number = 카테고리목록[i].cno
+                    console.log(`${카테고리number} 카테고리number`)
+                }
+            }
+           
+            
+            
+            if(기수확인 == 0){
+                for(let i = 0 ; i < identifyArray.length; i++){
+                    if(ezenLogin.loginId == identifyArray[i].ezenId){
+                        ezenMNo체크 = identifyArray[i].ezenMNo
+                        ezenGrade체크 = identifyArray[i].ezenGrade
+                        console.log(ezenMNo체크)
+                        console.log(ezenGrade체크)
+                    }
+                }
+            }
+        
+            if(ezenGrade체크 == 4 || ezenGrade체크 == 5){
+                for(let i = 0 ; i <cafeWriteList.length; i++){
+                    if(카테고리number == cafeWriteList[i].ctno){
+                        console.log('글출력은 되나?')
+                        html += `<div>${cafeWriteList[i].cfTitle}${cafeWriteList[i].cfContent}${cafeWriteList[i].cfdate}</div>`
+                    }
+                }
+                cafeWrite.innerHTML = html; 
+            }
+        
+            if(기수확인 == 1){
+                for(let i = 0 ; i < cafeWriteList.length; i++){
+                    if(카테고리number == cafeWriteList[i].ctno){
+                        console.log('글출력은 되나?')
+                        html += `<div>${cafeWriteList[i].cfTitle}${cafeWriteList[i].cfContent}${cafeWriteList[i].cfdate}</div>`
+                    }
+                }
+                cafeWrite.innerHTML = html; 
+            }
+        
+            if(기수확인 == 2){
+                for(let i = 0 ; i <cafeWriteList.length; i++){
+                    if(카테고리number == cafeWriteList[i].ctno){
+                        console.log('글출력은 되나?')
+                        html += `<div>${cafeWriteList[i].cfTitle}${cafeWriteList[i].cfContent}${cafeWriteList[i].cfdate}</div>`
+                    }
+                }
+                cafeWrite.innerHTML = html; 
+            }
+            
+        
+        
+        
+        
+        }
+
 
        
         function 카테고리생성(){
