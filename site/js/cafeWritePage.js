@@ -20,7 +20,6 @@ function afterlogin(){
 
     localStorage.setItem( 'ezenLogin' , JSON.stringify(ezenLogin) )
 
-    
 
 }
 
@@ -62,13 +61,7 @@ console.log(html)
 contentSelect.innerHTML = html;
 
 
-
-
 // 박시현 작업 끝
-
-
-
-
 
 
 })
@@ -93,8 +86,6 @@ function cafeWritePage(){/* 글쓰기 페이지로 가는 함수 */
 
 
 //까지가 로그인된 카페 글 쓰기 화면 함수
-
-
 
 
 
