@@ -31,7 +31,7 @@ justify-content: space-between;
     text-align: center;
     border-bottom: 3px solid #74bbbe;
 }
-
+ 
 #mainInner{ /* 메인 배열 */
     
     display: flex;
