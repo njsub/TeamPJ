@@ -5,15 +5,17 @@
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
     <title>Page Title</title>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
-    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
-    <script src='js/main.js'></script>
+    <link href='/site/main.css'>
+    <link rel='stylesheet' type='text/css' media='screen' href='/site/css/member.css'>
+    <script src='/site/js/header.js'></script>
+    <script src='/site/js/member.js'></script>
 </head>
 <body>
     <div id="allWrap">
         <div id="header"><!-- 헤더 -->
             <div id="headerTop"><!-- 헤더top -->
                 <div><!-- 헤더 topL -->
-                    <img style="height: 40px;" src="../img/badge-best-campus-common2023.png"/>
+                    <img style="height: 40px;" src="../../img/badge-best-campus-common2023.png"/>
                 </div>
                 <div id="headerTR"><!-- 헤더 topR -->
                     <input onclick="_signup()" type="button" value="로그인">
@@ -21,14 +23,14 @@
                 </div>
             </div>
             <div id="headerBtm"><!-- 헤더btm -->
-               <a href="/site/main.html"><img src="../img/20654215_user_114344.jpg"/></a> 
+               <a href="/site/main.html"><img src="../../img/20654215_user_114344.jpg"/></a> 
             </div>
         </div>
         <div id="mainInner"><!-- 이너 -->
             <div id="mainInnerL"><!-- 이너L -->
                 <div class="topLine">
                     <div >
-                        <img src="../img/capyzou.png" style="width: 80px;"> <br/><b>카페 매니저 : 카피조우</b><br/>
+                        <img src="../../img/capyzou.png" style="width: 80px;"> <br/><b>카페 매니저 : 카피조우</b><br/>
                         가입자 수 : <span id="cafeMembersNo"></span>
                     </div>
                     <div id="myInfo">
@@ -41,24 +43,44 @@
                     </span>
                      <div class="topLine">
                         <a>메인 게시판</a>
-
-                     
                     </div>
                     <div id="lnbMenu">
                     
                     </div>
                 </div>
-                
             </div>
-                <div> <!--  새로추가 일단...-->
-                <div id="mainInnerR"><!-- 이너R -->
-                    <div id="welcome">이젠 아카데미 컴퓨터 학원카페에 오신 것을 환영합니다!</div>
-                    <img src="/img/software-7236161_1280.png"/>
+            <div> <!-- 12 - 29  4시15분 추가-->
+                <div id="mainInnerR"><!-- 이너R --> 
+                    <div id="img_box"></div>
+                    <div>       <!-- 누나 데이터 이너 R에 div 하나도 안빠지고 다 등록함     --> 
+                        <h3>회원목록</h3>
+                        <table>
+                            <thead>
+                                <th>No</th>
+                                <th>아이디</th>
+                                <th>이름</th>
+                                <th>신분</th>
+                                <th>기수</th>
+                                <th>회원삭제</th>
+                            </thead>
+                            <tbody id="memberList">
+                                <!-- <td>1</td>
+                                <td>abc</td>
+                                <td>김송아</td>
+                                <td>학생</td>
+                                <td>2</td>
+                                <td><button onclick="삭제버튼()" value="삭제">삭제</button></td> -->
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                        <h3></h3>
+                    </div>
                 </div>
                 <div id="mainText">
                     
                 </div>
-            </div>  <!--  새로추가 일단.여까지..-->
+            </div>
         </div>
         <div id="footer" class="topLine"><!-- 푸터 -->
             <div id="footerL">
@@ -69,8 +91,7 @@
                 노진섭 김송아 박시현 신승호
             </div>
         </div>
+>>>>>>> 0327a10e4f52c0a5e34b53955a99e1f378d89143
     </div>
-
-    
 </body>
 </html>

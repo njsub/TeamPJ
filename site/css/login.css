@@ -62,5 +62,6 @@ body{
         #loginBtn:hover{
             text-decoration: underline;
             cursor: pointer;
+            background-color: #40bcc1;
         }
         

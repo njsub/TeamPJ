@@ -1,8 +1,134 @@
+* { list-style: none;   /* 공통 css */
+    margin: 0px;
+    padding: 0px;
+    line-height: 180%;
+    text-decoration: none
+
+}
+
+#allWrap{   /* 전체 묶어주기 */
+    width: 1200px;
+    margin: 0 auto;
+}
+
+#headerTop{ /* 헤더 */
+    display: flex;
+justify-content: space-between;
+}
+
+#headerTR>input{ padding: 5px;}
+
+
+#headerBtm{
+    text-align: center;
+    border-bottom: 3px solid #74bbbe;
+}
+
+#mainInner{ /* 메인 배열 */
+    display: flex;
+    margin-top: 30px;
+    justify-content: space-between;
+}
+
+    .topLine{
+        border-top: 3px solid #74bbbe;
+        padding: 15px;
+    }
+
+
+    #mainInnerL{/* 메인 L */
+        width: 250px;
+        text-align: left;
+    
+    }
+
+        #myInfo{    /* 내 정보 */
+            font-weight: bold;
+        }
+
+        #cafeSignup{     /* 카페 가입하기 버튼 */
+            margin-top: 10px;
+            text-align: center;
+            border: 1px solid gray;
+            border-radius: 10px;
+            background-color: gray;
+            padding: 5px 0px;
+            color: white;
+        }
+        
+        #cafeSignup:hover{
+            text-decoration: underline;
+            cursor: pointer;
+        }
+
+        
+        #cafeWrite{     /* 카페 글 쓰기 버튼 */
+            margin-top: 10px;
+            text-align: center;
+            border: 1px solid #74bbbe;
+            border-radius: 10px;
+            background-color: #74bbbe;
+            padding: 5px 0px;
+            color: white;
+        }
+        #cafeWrite:hover{
+            text-decoration: underline;
+            cursor: pointer;
+            background-color: #40bcc1;
+        }
+
+
+    #mainMenu{
+        min-height: 700px;
+    }
+
+
+    #mainInnerR{    /*참고 !! 메인 이너 size !! 참고*/
+        width: 920px;
+    }
+
+    
+
+
+    #footer{ 
+        display: flex;
+        justify-content: space-between;
+        padding-bottom: 30px;
+    }
+
+
+
+
+ 
+
+    a{text-decoration: none; color: black; font-size: 16px; font-weight: bold;}
+
+    .mainMenuS{
+        padding: 8px 30px;
+        border-top: 1px solid #e8e8e8;
+        color: rgb(159, 159, 159);
+    }
+
+    .mainMenuS:hover{
+        cursor: pointer;
+        text-decoration: underline;
+        color: black;
+    }
+
+
+
+
+/* main CSS 여기 까지 */
+
+
+h3 {
+    margin: 20px 0 15px;
+}
 table {
     border: 1px solid black;
-    width: 30%;
+    width: 920px;
     text-align: center;
-    margin-bottom: 100px;
+    margin-bottom: 50px;
 }
 table tr th {
     border:  1px solid black;
@@ -12,12 +138,29 @@ table tr td {
     border: 1px solid black;
     padding: 10px;
 }
+#categoryBox2{
+    margin-bottom: 100px;
+}
+
 #categoryBox2 input {
     padding: 10px;
 }
 #categoryBox2 button {
     padding: 9px;
+    
 }
 #categoryBox2 span { 
     margin-right: 10px;
 }
+#img_box {
+    width: 100%;
+    height: 240px;
+    background-image: url(/img/sub_img1.jpg);
+    background-size: 64%;
+    background-position-y: -28px;
+    background-position-x: 60px;
+}
+
+/* #img_box > img {
+    width: 100%;
+} */

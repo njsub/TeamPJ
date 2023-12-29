@@ -6,33 +6,89 @@
     <title>Page Title</title>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
     <link rel='stylesheet' type='text/css' media='screen' href='/site/css/category.css'>
+    <script src='/site/js/header.js'></script>
     <script src='/site/js/category.js'></script>
 </head>
 <body>
-    <div id="categorylistBox">
-        <h3>카테고리목록</h3>
-        <table>
-            <thead>
-                <th>cno</th>
-                <th>카테고리명</th>
-                <th>권한</th>
-                <th>기수</th>
-            </thead>
-            <tbody id="categoryList">
-                <!-- <td>10</td>
-                <td>카테고리명</td>
-                <td>3</td>
-                <td>2</td> -->
-            </tbody>
-        </table>
+    <div id="allWrap">
+        <div id="header"><!-- 헤더 -->
+            <div id="headerTop"><!-- 헤더top -->
+                <div><!-- 헤더 topL -->
+                    <img style="height: 40px;" src="../../img/badge-best-campus-common2023.png"/>
+                </div>
+                <div id="headerTR"><!-- 헤더 topR -->
+                    <input onclick="_signup()" type="button" value="로그인">
+                    <input onclick="_cAccount()" type="button" value="회원가입">
+                </div>
+            </div>
+            <div id="headerBtm"><!-- 헤더btm -->
+               <a href="/site/main.html"><img src="../../img/20654215_user_114344.jpg"/></a> 
+            </div>
+        </div>
+        <div id="mainInner"><!-- 이너 -->
+            <div id="mainInnerL"><!-- 이너L -->
+                <div class="topLine">
+                    <div >
+                        <img src="../../img/capyzou.png" style="width: 80px;"> <br/><b>카페 매니저 : 카피조우</b><br/>
+                        가입자 수 : <span id="cafeMembersNo"></span>
+                    </div>
+                    <div id="myInfo">
+                        <div onclick="_cAccount()" id="cafeSignup">카페 가입하기</div>
+                    </div>    
+                </div>
+                <div id="mainMenu" >
+                    <span> <!-- 관리자 로그인, 강사 로그인 용 -->
+
+                    </span>
+                     <div class="topLine">
+                        <a>메인 게시판</a>
+                    </div>
+                    <div id="lnbMenu">
+                    
+                    </div>
+                </div>
+            </div>
+            <div> <!-- 2023-12-29 4:18 -->
+                <div id="mainInnerR"><!-- 이너R -->
+                    <div id="img_box"><!-- <img src="/img/sub_img1.jpg" alt=""> --></div>
+                    <div id="categorylistBox"> <!-- div 하나도 안빠지고 등록함!! -->
+                        <h3>카테고리목록</h3>
+                        <table>
+                            <thead>
+                                <th>cno</th>
+                                <th>카테고리명</th>
+                                <th>기수</th>
+                            </thead>
+                            <tbody id="categoryList">
+                                <!-- <td>10</td>
+                                <td>카테고리명</td>
+                                <td>3</td>
+                                <td>2</td> -->
+                            </tbody>
+                        </table>
+                    </div>
+                    <div id="categoryBox2">
+                        <h3>카테고리등록</h3>
+                        <span>카테고리명</span><input id="cateBox" type="text" value="">
+                        <span>기수</span><input style="width: 40px;" id="gisuBox" type="text" value="">
+                        <button onclick="카테고리등록()" id="btn">등록</button>
+                    </div>
+                </div> 
+                <div id="mainText">
+                    
+                </div>
+            </div>
+        </div>
+        <div id="footer" class="topLine"><!-- 푸터 -->
+            <div id="footerL">
+                이젠 아카데미 컴퓨터학원 노원점 공식카페
+                <a href="/site/main.html" style="color: black;">www.노진섭김송아박시현신승호.co.kr</a>
+            </div>
+            <div id="footerR">
+                노진섭 김송아 박시현 신승호
+            </div>
+        </div>
     </div>
-    <div id="categoryBox2">
-        <h3>카테고리등록</h3>
-        <span>cno</span><input style="width: 40px;" id="cnoBox" type="text" value="">
-        <span>카테고리명</span><input id="cateBox" type="text" value="">
-        <span>권한</span><input style="width: 40px;" id="gradeBox" type="text" value="">
-        <span>기수</span><input style="width: 40px;" id="gisuBox" type="text" value="">
-        <button onclick="카테고리등록()" id="btn">등록</button>
-    </div>
+    
 </body>
 </html>

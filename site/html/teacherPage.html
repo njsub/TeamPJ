@@ -6,31 +6,81 @@
     <title>Page Title</title>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
     <link rel='stylesheet' type='text/css' media='screen' href='/site/css/teacherPage.css'>
+    <script src='/site/js/header.js'></script>
+    <script src='/site/js/teacherPage.js'></script>
 </head>
 <body>
-    <div id="임시랩">
-        <div id="teachMeinBox">
-            <ul id="teachMein">
-                <li>회원 명</li>
-                <li>현재기수</li>
-                <li>기수버튼</li>
-            </ul>
-        </div>
-        <div id="teachControloBox">
-            <ul id="teachControl">
-                <li>홍길동</li>
-                <li>1기수</li>
-                <div>
-                    <select>
-                        <option>0기수</option>
-                        <option>1기수</option>
-                        <option>2기수</option>
-                    </select>
+    <div id="allWrap">
+        <div id="header"><!-- 헤더 -->
+            <div id="headerTop"><!-- 헤더top -->
+                <div><!-- 헤더 topL -->
+                    <img style="height: 40px;" src="/img/badge-best-campus-common2023.png"/>
                 </div>
-            </ul>
+                <div id="headerTR"><!-- 헤더 topR -->
+                    <input onclick="_signup()" type="button" value="로그인">
+                    <input onclick="_cAccount()" type="button" value="회원가입">
+                </div>
+            </div>
+            <div id="headerBtm"><!-- 헤더btm -->
+                <a href="/site/main.html"><img src="/img/20654215_user_114344.jpg"/></a>
+            </div>
+        </div>
+        <div id="mainInner"><!-- 이너 -->
+            <div id="mainInnerL"><!-- 이너L -->
+                <div class="topLine">
+                    <div >
+                        <img src="/img/capyzou.png" style="width: 80px;"> <br/><b>카페 매니저 : 카피조우</b><br/>
+                        가입자 수 : <span id="cafeMembersNo"></span>
+                    </div>
+                    <div id="myInfo">
+                        <div onclick="_cAccount()" id="cafeWrite">카페 가입 하기</div>
+                    </div>    
+                </div>
+                <div id="mainMenu" >
+                    <span> <!-- 관리자 로그인, 강사 로그인 용 -->
+
+                    </span>
+                     <div class="topLine">
+                        <a>메인 게시판</a>
+                    </div>
+                    <div id="lnbMenu">
+                    
+                    </div>
+                </div>
+            </div>
+            <div>   <!-- 4:12 추가-->
+                <div id="mainInnerR"><!-- 이너R -->
+                        <img id="teacherPageMain" src="/img/teacherPageMain.png" alt="사진">
+                    <div id="teachRwap">
+                        <h3>강사 페이지</h3>
+                        <table id="teachMeinBox">
+                            <thead id="teachMein">
+                                <th>아이디</th>
+                                <th>이름</th>
+                                <th>현재기수</th>
+                                <th>기수버튼</th>
+                            </thead>
+                        </table>
+                        <div id="teachControloBox">  
+                        </div>
+                    </div>
+                </div>
+                <div id="mainText">
+                        
+                </div>
+            </div>
+        </div>  <!--  새로추가 일단.여까지..-->
+        </div>
+        <div id="footer" class="topLine"><!-- 푸터 -->
+            <div id="footerL">
+                이젠 아카데미 컴퓨터학원 노원점 공식카페
+                <a href="/site/main.html" style="color: black;">www.노진섭김송아박시현신승호.co.kr</a>
+            </div>
+            <div id="footerR">
+                노진섭 김송아 박시현 신승호
+            </div>
         </div>
     </div>
-
-    <script src='/site/js/teacherPage.js'></script>
+    
 </body>
 </html>
